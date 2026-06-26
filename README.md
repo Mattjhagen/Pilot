@@ -1,313 +1,169 @@
-# Pilot
+Pilot
 
-# Pilot
-> The AI Operating System for Your Financial Life
+The AI Operating System for Your Financial Life
 
-> Internal Codename: Pilot
-> Public branding may change in the future.
+⸻
 
----
+Vision
 
-# Vision
+Pilot is not a bank.
 
-Pilot is **not a banking app.**
+Pilot is not a budgeting app.
 
-Pilot is an intelligent operating system that helps people make better financial decisions.
+Pilot is not a chatbot.
 
-Banking is only one capability.
+Pilot is an AI-powered Financial Operating System that helps people make smarter financial decisions while reducing stress and automating everyday financial tasks.
 
-The long-term goal is to become the central intelligence layer that connects every aspect of a person's financial life.
+The long-term vision is for Pilot to become the intelligence layer that sits above every financial institution a user interacts with.
 
-Examples include:
+Pilot should eventually become the application users trust most with understanding and managing their financial lives.
 
-- Bank accounts
-- Credit cards
-- Investments
-- Loans
-- Savings
-- Bills
-- Insurance
-- Payroll
-- Taxes
-- Financial goals
-- Trust Score
-- AI automation
+⸻
 
-The user should feel like they have a personal Chief Financial Officer available 24/7.
+Mission
 
----
+Traditional fintech products organize financial information.
 
-# Product Philosophy
+Pilot actively helps people make better financial decisions.
 
-We are NOT trying to build another:
+The application should continuously answer three questions:
 
-- Chime
-- Robinhood
-- Current
-- Cash App
-- Green Dot
-- SoFi
+* Where am I financially?
+* What deserves my attention?
+* What should I do next?
 
-Those products organize money.
+If a feature cannot improve one of those answers, it probably does not belong.
 
-Pilot manages money.
+⸻
 
-The application should proactively help users rather than simply displaying information.
+Product Philosophy
 
-If a feature only reports data, ask whether it can instead recommend or automate an action.
+Pilot believes that software should do more than display information.
 
----
+Software should think.
 
-# Design Principles
+Software should anticipate.
 
-Everything should feel:
+Software should automate.
 
-- Calm
-- Premium
-- Intelligent
-- Native to Apple
-- Fast
-- Minimal
-- Human
+Money should increasingly manage itself.
 
-Avoid visual clutter.
+Users should spend less time worrying about finances and more time living their lives.
 
-Avoid dashboards full of charts.
+⸻
 
-Avoid unnecessary settings.
+Core Product Areas
 
-Avoid overwhelming the user.
+Pilot is designed as a collection of intelligent systems rather than separate products.
 
-Every screen should answer one question.
+Planned areas include:
 
----
+* AI Financial Copilot
+* Money Management
+* Financial Health
+* Trust Score
+* Financial Goals
+* Intelligent Automations
+* Savings
+* Investing
+* Lending
+* Notifications
+* Widgets
+* Connected Financial Institutions
 
-# Engineering Principles
+Each feature exists as part of a unified operating system.
 
-Always favor:
+⸻
 
-SwiftUI
+Apple-First Experience
 
-SwiftData
+Pilot is built exclusively with native Apple technologies.
 
-Observation
+Primary technologies include:
 
-Async/Await
+* SwiftUI
+* SwiftData
+* Observation
+* Async/Await
+* Structured Concurrency
+* Swift Testing
 
-Structured concurrency
+The experience should feel as though it belongs alongside Apple’s first-party applications.
 
-Protocol-oriented architecture
+Performance, accessibility, privacy, and polish are priorities—not afterthoughts.
 
-Dependency injection
+⸻
 
-Feature modularization
+Engineering Philosophy
 
-Reusable components
+Pilot favors:
 
-Composition over inheritance
+* Simplicity
+* Readability
+* Modularity
+* Maintainability
+* Native APIs
+* Reusable components
+* Long-term architecture over short-term convenience
 
-Do not introduce UIKit unless absolutely necessary.
+Every commit should leave the project healthier than it was before.
 
----
+⸻
 
-# AI Philosophy
+Repository Documents
 
-The AI is NOT a chatbot.
+This repository intentionally separates responsibilities across three core documents.
 
-The AI is a financial copilot.
+README.md
 
-The AI should:
+Defines the product vision.
 
-notice
+Explains what Pilot is, why it exists, and the long-term direction of the project.
 
-predict
+AGENTS.md
 
-recommend
+Defines engineering rules for AI coding agents.
 
-automate
+Every AI assistant contributing to this repository should treat AGENTS.md as the project’s engineering constitution.
 
-educate
+It contains implementation guardrails, coding standards, architectural principles, and workflow expectations.
 
-protect
+Before making significant changes, AI agents should review this document.
 
-The AI should be proactive whenever possible.
+DECISIONS.md
 
----
+Maintains the project’s Architectural Decision Record (ADR).
 
-# Trust Philosophy
+This file documents why important architectural decisions were made.
 
-We do NOT build around FICO.
+It is not a changelog.
 
-Trust is earned through behavior.
+It is not commit history.
 
-Future Trust Score examples:
+Whenever a significant architectural decision is made, a new ADR should be appended rather than modifying previous entries.
 
-Income consistency
+Historical reasoning is preserved to help future contributors understand the evolution of the project.
 
-Savings habits
+⸻
 
-Bill payment history
+Development Workflow
 
-Employment stability
+Before implementing significant features:
 
-Financial resilience
+1. Understand the product vision described in this README.
+2. Follow the engineering rules in AGENTS.md.
+3. Review DECISIONS.md for relevant architectural context.
+4. If introducing a major architectural decision, document it in DECISIONS.md before implementation.
+5. Implement incrementally while preserving existing architecture whenever possible.
 
-Goal completion
+⸻
 
-Identity verification
+Long-Term Goal
 
-The score should always explain WHY.
+Pilot should eventually become the operating system users trust to manage every aspect of their financial lives.
 
-Never shame users.
+Not because it holds their money.
 
-Always educate.
+Because it understands it.
 
----
-
-# UX Rules
-
-Every interaction should reduce cognitive load.
-
-Every screen should answer:
-
-What happened?
-
-What matters?
-
-What should I do next?
-
-Never display information without context.
-
----
-
-# Automation Philosophy
-
-Automation is a first-class feature.
-
-Users should create rules such as:
-
-Move excess cash into savings.
-
-Round purchases.
-
-Pay bills.
-
-Invest weekly.
-
-Warn before purchases.
-
-Reduce overdraft risk.
-
-Automations should feel similar to Apple Shortcuts.
-
----
-
-# Security
-
-Security is a feature.
-
-Never sacrifice security for convenience.
-
-Default assumptions:
-
-Least privilege
-
-Secure Enclave when possible
-
-Face ID
-
-Apple Keychain
-
-Encrypted storage
-
-No secrets committed to Git.
-
-No API keys committed.
-
-No production credentials.
-
----
-
-# Architecture
-
-Build features in this order.
-
-1. Design System
-
-2. Navigation
-
-3. Dashboard
-
-4. AI Copilot
-
-5. Money
-
-6. Trust
-
-7. Automations
-
-8. Goals
-
-9. Notifications
-
-10. Widgets
-
-11. Banking Integrations
-
-12. Investments
-
-13. Lending Engine
-
-14. Blockchain Anchoring (optional)
-
-Do not skip ahead.
-
----
-
-# Code Quality
-
-Write production-quality code.
-
-Avoid TODOs.
-
-Avoid placeholder implementations.
-
-Avoid dead code.
-
-Avoid duplicated logic.
-
-Favor reusable abstractions.
-
-Document architectural decisions.
-
-When uncertain, choose the solution that will still make sense in five years.
-
----
-
-# Before Adding Any Feature
-
-Ask:
-
-Does this make the user's financial life simpler?
-
-Does this reduce anxiety?
-
-Does this save time?
-
-Does this increase trust?
-
-Could the AI perform this automatically?
-
-If the answer is no, reconsider the feature.
-
----
-
-# Long-Term Vision
-
-The end goal is not to build a better bank.
-
-The end goal is to build the operating system for personal finance.
-
-Users should eventually trust Pilot more than they trust any individual financial institution because Pilot works for them—not for a bank.
-
-Every engineering decision should move the product toward that vision.
+Every engineering decision should move the project toward that vision.
