@@ -6,12 +6,30 @@ This directory (`/docs`) contains the static landing page for Pilot, accessible 
 - `index.html`: The main landing page markup.
 - `style.css`: The styling, relying on standard CSS to remain lightweight and easy to maintain without external frameworks.
 
-## Design
+## Design & Features
 The landing page adheres strictly to the Pilot Design Language (PDL), utilizing:
 - Deep charcoal backgrounds
 - Soft glass cards (`var(--glass-bg)`)
 - Subtle gradients for hero elements like the Financial Health orb
 - Inter font for crisp, modern typography
+
+### Accessibility
+- **Reduced Motion**: Full support for `prefers-reduced-motion` to automatically disable CSS animations (breathing orbs, floating cards, scroll reveals) for users who prefer static layouts.
+
+### Social & Meta
+- **OpenGraph & Twitter**: Fully configured meta tags for social sharing.
+- **Favicon**: Minimalist Pilot orb SVG favicon.
+- **Placeholder OG Image**: Located at `assets/og-image.svg`.
+
+### Call To Action (CTA)
+- The "Join Early Access" CTA is currently wired to a `mailto:` link (`earlyaccess@pilotfinance.space`) while the product is in prototype review.
+- The "Watch Demo" button triggers an alert indicating it is coming soon.
+
+## What Needs to be Replaced Before Public Launch
+- Replace the `mailto:` CTA with an actual waitlist/backend integration (e.g., Mailchimp, custom API).
+- Replace the placeholder "Watch Demo" alert with a real video modal or external link.
+- Consider replacing the SVG OpenGraph image (`assets/og-image.svg`) with a high-fidelity PNG/JPG if social platforms struggle with SVG parsing for link previews.
+- Remove the "Prototype Disclaimer" at the bottom of the page once real financial rails are connected.
 
 ## GitHub Pages Configuration
 To serve this site on GitHub Pages:

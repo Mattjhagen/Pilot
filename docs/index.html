@@ -7,102 +7,203 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+    <!-- OpenGraph & Social Meta Tags -->
+    <meta property="og:title" content="Pilot — Your AI Financial Operating System">
+    <meta property="og:description" content="Pilot helps you understand, automate, and improve your financial life with AI-powered recommendations, Trust Score, smart automations, and trust-based lending.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pilotfinance.space">
+    <meta property="og:image" content="https://pilotfinance.space/assets/og-image.svg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Pilot — Your AI Financial Operating System">
+    <meta name="twitter:description" content="Pilot helps you understand, automate, and improve your financial life with AI-powered recommendations, Trust Score, smart automations, and trust-based lending.">
+    <meta name="twitter:image" content="https://pilotfinance.space/assets/og-image.svg">
 </head>
 <body>
 
+    <!-- Ambient Background -->
+    <div class="ambient-background"></div>
+
     <!-- Header -->
-    <header class="header">
+    <header class="header fade-in-up delay-1">
         <div class="logo">Pilot</div>
         <a href="#early-access" class="btn-secondary">Join Waitlist</a>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="section hero fade-in-up delay-2">
+        <div class="hero-orb-container">
+            <div class="hero-orb"></div>
+        </div>
         <div class="hero-content">
-            <div class="badge">Introducing Pilot v2</div>
-            <h1 class="hero-title">Your AI financial<br>operating system.</h1>
-            <p class="hero-subtitle">Pilot helps you understand, automate, and improve your financial life — from cash flow and trust to lending and smart recommendations.</p>
-            <a href="#early-access" class="btn-primary">Join Early Access</a>
+            <h1 class="hero-title">Your AI Financial<br>Operating System.</h1>
+            <p class="hero-subtitle">Pilot doesn’t just track your money.<br>It understands it, protects it, grows it, and helps you make better financial decisions every day.</p>
+            <div class="hero-actions">
+                <a href="mailto:earlyaccess@pilotfinance.space?subject=Pilot Early Access Request" class="btn-primary">Join Early Access</a>
+                <a href="#demo" class="btn-secondary btn-demo" onclick="alert('Demo video coming soon!'); return false;">
+                    <span class="play-icon">▶</span> Watch Demo (Coming Soon)
+                </a>
+            </div>
         </div>
     </section>
 
-    <!-- Command Center Preview Section -->
-    <section class="section command-center">
-        <div class="section-header">
-            <h2>The AI Command Center</h2>
-            <p>The beating heart of Pilot. A dynamic, intelligent surface that synthesizes your entire financial life into a single, proactive interface.</p>
-        </div>
-        <div class="glass-card mockup-card">
-            <div class="mockup-header">
-                Good morning. Runway is 45 days. You have $1,200 in excess liquidity this week.
+    <!-- Narrative Section 1: Fragmented -->
+    <section class="section narrative-section scroll-reveal">
+        <div class="narrative-content center-text">
+            <h2>Money today is fragmented.</h2>
+            <div class="fragmented-list">
+                <span>Banks.</span>
+                <span>Budgets.</span>
+                <span>Credit.</span>
+                <span>Investments.</span>
+                <span>Loans.</span>
             </div>
-            <div class="mockup-body">
-                <div class="orb-container">
-                    <div class="orb"></div>
-                    <div class="orb-text">Optimal Health</div>
+            <p class="highlight-text">Pilot brings everything together.</p>
+        </div>
+    </section>
+
+    <!-- Narrative Section 2: AI CFO -->
+    <section class="section narrative-section scroll-reveal">
+        <div class="narrative-content">
+            <h2>Meet your AI CFO.</h2>
+            <p>An intelligent Command Center that acts on your behalf.</p>
+        </div>
+        
+        <div class="mockup-container">
+            <div class="glass-card mockup-card float-element">
+                <div class="mockup-header">
+                    <div class="briefing">Good morning. Runway is <span class="highlight">45 days</span>. You have $1,200 in excess liquidity this week.</div>
                 </div>
-                <div class="recommendation-card">
-                    <div class="rec-icon">✨</div>
-                    <div class="rec-content">
-                        <strong>Invest Excess Liquidity</strong>
-                        <span>I recommend moving $500 to savings.</span>
+                <div class="mockup-body">
+                    <div class="mockup-grid">
+                        <div class="glass-widget health-widget float-delay-1">
+                            <div class="health-orb"></div>
+                            <div class="widget-value">92%</div>
+                            <div class="widget-label">Financial Health</div>
+                        </div>
+                        <div class="glass-widget runway-widget float-delay-2">
+                            <div class="widget-value"><span class="counter" data-target="4.2">0.0</span></div>
+                            <div class="widget-label">Months Runway</div>
+                        </div>
+                        <div class="glass-widget recommendation-widget float-delay-3">
+                            <div class="rec-icon">✨</div>
+                            <div class="rec-text">
+                                <strong>Pilot Recommendation</strong>
+                                <span>Move $500 to savings</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Feature Pillars Section -->
-    <section class="section features grid-2">
-        <div class="glass-card feature-card">
-            <h3>Financial Health</h3>
-            <p>Moving beyond simple bank balances. Know exactly where you stand with a single, irrefutable measure of your overall financial stability.</p>
-        </div>
-        <div class="glass-card feature-card">
-            <h3>Smart Automations</h3>
-            <p>Set rules and let money manage itself. Autonomous routing, scheduled transfers, and intelligent staging for upcoming bills.</p>
-        </div>
-        <div class="glass-card feature-card">
-            <h3>Unified Integrations</h3>
-            <p>Connect your entire financial graph. All your accounts, all your data, seamlessly synthesized into a single source of truth.</p>
-        </div>
-        <div class="glass-card feature-card">
-            <h3>The Copilot</h3>
-            <p>Actionable AI recommendations. Pilot doesn't just show you data; it does the heavy lifting, proposing the exact moves you need to make.</p>
+    <!-- Narrative Section 3: Trust -->
+    <section class="section narrative-section scroll-reveal">
+        <div class="narrative-content center-text">
+            <h2>Trust changes everything.</h2>
+            <p class="large-text">Your reputation should open doors—not your credit history.</p>
+            
+            <div class="trust-container">
+                <div class="trust-gauge">
+                    <div class="gauge-ring"></div>
+                    <div class="gauge-glow"></div>
+                    <div class="gauge-value"><span class="counter" data-target="850">0</span></div>
+                    <div class="gauge-label">Trust Score</div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Trust Score & Lending Section -->
-    <section class="section grid-2 trust-lending">
-        <div class="glass-card trust-card">
-            <div class="card-icon">🔵</div>
-            <h2>Trust Score</h2>
-            <p>Traditional credit scores are opaque and punishing. The Trust Score is transparent, action-oriented, and based on your real behavior. Build trust, unlock capabilities.</p>
+    <!-- Narrative Section 4: Quiet Work -->
+    <section class="section narrative-section scroll-reveal">
+        <div class="narrative-content center-text">
+            <h2>Pilot works quietly.</h2>
+            <p>We believe the best financial operating system is the one you don't have to manage.</p>
         </div>
-        <div class="glass-card lending-card">
-            <div class="card-icon">💳</div>
-            <h2>Trust-Based Lending</h2>
-            <p>Access Pilot credit lines and 0% interest advances based on your Trust Score. Smooth out cash flow effortlessly without predatory rates.</p>
+        <div class="quiet-list">
+            <div class="quiet-item float-delay-1">
+                <div class="check-icon">✓</div>
+                <span>Moved money before an overdraft</span>
+            </div>
+            <div class="quiet-item float-delay-2">
+                <div class="check-icon">✓</div>
+                <span>Found a cheaper subscription</span>
+            </div>
+            <div class="quiet-item float-delay-3">
+                <div class="check-icon">✓</div>
+                <span>Increased savings automatically</span>
+            </div>
+            <div class="quiet-item float-delay-4">
+                <div class="check-icon">✓</div>
+                <span>Suggested paying a card tomorrow</span>
+            </div>
+        </div>
+        <div class="narrative-content center-text" style="margin-top: 4rem;">
+            <p class="highlight-text">The point is: Pilot acts.</p>
         </div>
     </section>
 
-    <!-- Early Access / Waitlist -->
-    <section id="early-access" class="section early-access">
+    <!-- Narrative Section 5: Timeline -->
+    <section class="section narrative-section scroll-reveal">
+        <div class="narrative-content center-text">
+            <h2>Built for what’s next.</h2>
+            
+            <div class="roadmap-timeline">
+                <div class="timeline-item active">
+                    <div class="node"></div>
+                    <div class="timeline-content">
+                        <strong>Today</strong>
+                        <span>Prototype</span>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="node"></div>
+                    <div class="timeline-content">
+                        <strong>Next</strong>
+                        <span>Private Beta</span>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="node"></div>
+                    <div class="timeline-content">
+                        <span>Connected Accounts</span>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="node"></div>
+                    <div class="timeline-content">
+                        <span>AI Automation</span>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="node"></div>
+                    <div class="timeline-content">
+                        <span>Trust-Based Lending</span>
+                    </div>
+                </div>
+                <div class="timeline-item future">
+                    <div class="node"></div>
+                    <div class="timeline-content">
+                        <strong>The Vision</strong>
+                        <span>Financial Operating System</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Early Access -->
+    <section id="early-access" class="section early-access scroll-reveal">
         <div class="glass-card cta-card">
-            <h2>Ready to upgrade your financial life?</h2>
-            <p>Join the waitlist to be among the first to experience Pilot.</p>
-            <form class="waitlist-form" onsubmit="event.preventDefault(); alert('Thanks for your interest! This is a prototype.');">
-                <input type="email" placeholder="Enter your email" required>
-                <button type="submit" class="btn-primary">Join Waitlist</button>
+            <h2>Join the waitlist.</h2>
+            <form class="waitlist-form" onsubmit="event.preventDefault(); window.location.href='mailto:earlyaccess@pilotfinance.space?subject=Pilot Early Access Request';">
+                <input type="email" placeholder="Email address" required>
+                <button type="submit" class="btn-primary">Reserve Spot</button>
             </form>
-        </div>
-    </section>
-
-    <!-- Prototype Disclaimer -->
-    <section class="section disclaimer">
-        <div class="glass-card disclaimer-card">
-            <strong>Prototype Disclaimer:</strong> Pilot is currently a prototype using mock financial data. It is not yet connected to real banking, lending, or payment rails. No real financial transactions take place.
+            <p style="margin-top: 16px; font-size: 0.875rem; color: var(--text-secondary);">Early access is currently handled manually while Pilot is in prototype review.</p>
         </div>
     </section>
 
@@ -115,15 +216,60 @@
                 <p class="built-by">Built by P3 Lending LLC</p>
             </div>
             <div class="footer-links">
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
                 <a href="#">Contact</a>
+                <a href="https://github.com">GitHub</a>
             </div>
+        </div>
+        <div class="prototype-disclaimer">
+            <strong>Prototype Disclaimer:</strong> Pilot is currently a prototype. All financial data, account linking, lending, automations, and recommendations shown in the app are simulated. Pilot does not currently provide banking, lending, investment, or financial advisory services.
         </div>
         <div class="footer-bottom">
             &copy; 2026 P3 Lending LLC. All rights reserved.
         </div>
     </footer>
 
+    <!-- Interactive Scripts -->
+    <script>
+        // Scroll Reveal
+        const revealElements = document.querySelectorAll('.scroll-reveal');
+        
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    
+                    // Trigger counters if they exist in the revealed section
+                    const counters = entry.target.querySelectorAll('.counter');
+                    counters.forEach(counter => {
+                        if(!counter.classList.contains('counted')) {
+                            const target = parseFloat(counter.getAttribute('data-target'));
+                            const duration = 2000;
+                            const steps = 60;
+                            const stepTime = Math.abs(Math.floor(duration / steps));
+                            const isDecimal = target % 1 !== 0;
+                            
+                            let current = 0;
+                            const increment = target / steps;
+                            
+                            const timer = setInterval(() => {
+                                current += increment;
+                                if (current >= target) {
+                                    counter.innerText = isDecimal ? target.toFixed(1) : Math.floor(target);
+                                    counter.classList.add('counted');
+                                    clearInterval(timer);
+                                } else {
+                                    counter.innerText = isDecimal ? current.toFixed(1) : Math.floor(current);
+                                }
+                            }, stepTime);
+                        }
+                    });
+                }
+            });
+        }, { threshold: 0.15 });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+    </script>
 </body>
 </html>
