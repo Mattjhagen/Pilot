@@ -51,11 +51,18 @@ supabase functions deploy waitlist-signup --no-verify-jwt
 
 ## 4. Frontend Configuration
 
-In `docs/index.html`, locate the `WAITLIST_ENDPOINT` constant at the bottom of the script block.
+In `docs/index.html`, locate the `PILOT_CONFIG` object at the bottom of the script block.
 
 **You MUST replace the placeholder with your actual Supabase Edge Function URL before launching:**
+1. Find `PILOT_CONFIG.waitlistEndpoint`
+2. Replace `YOUR_SUPABASE_PROJECT_REF` with the actual Supabase project ref
+3. Example format:
+    `https://abc123xyz.functions.supabase.co/waitlist-signup`
+
 ```javascript
-const WAITLIST_ENDPOINT = "https://YOUR_PROJECT.functions.supabase.co/waitlist-signup";
+const PILOT_CONFIG = {
+  waitlistEndpoint: "https://YOUR_SUPABASE_PROJECT_REF.functions.supabase.co/waitlist-signup"
+};
 ```
 
 ## 5. Manual Testing Steps

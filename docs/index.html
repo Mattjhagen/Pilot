@@ -655,7 +655,13 @@
         renderSim();
 
         // --- WAITLIST LOGIC ---
-        const WAITLIST_ENDPOINT = "https://YOUR_PROJECT.functions.supabase.co/waitlist-signup";
+        const PILOT_CONFIG = {
+            waitlistEndpoint: "https://YOUR_SUPABASE_PROJECT_REF.functions.supabase.co/waitlist-signup"
+        };
+
+        if (PILOT_CONFIG.waitlistEndpoint.includes("YOUR_SUPABASE_PROJECT_REF")) {
+            console.warn("Pilot waitlist endpoint is not configured yet.");
+        }
         
         const waitlistForm = document.getElementById('waitlist-form');
         const waitlistSubmit = document.getElementById('waitlist-submit');
@@ -675,7 +681,7 @@
                 waitlistMessage.innerText = '';
 
                 try {
-                    const response = await fetch(WAITLIST_ENDPOINT, {
+                    const response = await fetch(PILOT_CONFIG.waitlistEndpoint, {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({ email })
