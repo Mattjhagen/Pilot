@@ -112,79 +112,52 @@
                 <div class="iphone-frame">
                     <div class="iphone-notch"></div>
                     <div class="iphone-screen">
-                        
-                        <!-- Screen 1: Command Center -->
-                        <div class="app-screen active" id="screen-cmd">
-                            <div class="screen-header">Command Center</div>
-                            <div class="screen-content">
-                                <div class="health-orb-mini pulse-animation"></div>
-                                <div class="demo-widget">✨ Move $500 to savings</div>
-                                <div class="demo-list">
-                                    <div class="demo-list-item">Netflix <span>$15.99</span></div>
-                                    <div class="demo-list-item">Car Insurance <span>$120.00</span></div>
+                        <!-- Dashboard Base -->
+                        <div class="storyboard-base">
+                            <div class="greeting">Good Morning, Matt.</div>
+                            
+                            <div class="dashboard-grid">
+                                <div class="glass-widget">
+                                    <div class="widget-value">92</div>
+                                    <div class="widget-label">Financial Health</div>
                                 </div>
+                                <div class="glass-widget">
+                                    <div class="widget-value">4.2<span style="font-size:0.6em; margin-left:2px">mo</span></div>
+                                    <div class="widget-label">Cash Runway</div>
+                                </div>
+                                <div class="glass-widget trust-widget">
+                                    <div class="widget-value trust-val">842</div>
+                                    <div class="widget-label">Trust Score</div>
+                                </div>
+                            </div>
+                            
+                            <div class="health-orb-mini pulse-animation center-orb"></div>
+                        </div>
+
+                        <!-- Insight Alert Overlay -->
+                        <div class="insight-alert">
+                            <div class="insight-text">Pilot noticed your electric bill is <strong>27% higher</strong> than normal.</div>
+                            <div class="insight-actions">
+                                <div class="insight-btn">Find cheaper provider</div>
+                                <div class="insight-btn primary-btn btn-create-plan">Create payment plan</div>
+                                <div class="insight-btn secondary-btn">Ignore</div>
                             </div>
                         </div>
 
-                        <!-- Screen 2: Money -->
-                        <div class="app-screen" id="screen-money">
-                            <div class="screen-header">Money</div>
-                            <div class="screen-content">
-                                <div class="balance-display">$14,250.00</div>
-                                <p class="balance-label">Total Cash</p>
-                                <div class="demo-list" style="margin-top:20px;">
-                                    <div class="demo-list-item">Whole Foods <span>-$45.20</span></div>
-                                    <div class="demo-list-item">Salary <span>+$3,200.00</span></div>
-                                </div>
-                            </div>
+                        <!-- Automation Success Widget -->
+                        <div class="automation-widget">
+                            <div class="auto-header"><span class="check-icon">✓</span> Automation Created</div>
+                            <div class="auto-rule">If paycheck arrives</div>
+                            <div class="auto-rule indent">→ Pay electric bill</div>
+                            <div class="auto-rule indent">→ Move 10% to savings</div>
                         </div>
 
-                        <!-- Screen 3: Trust Score -->
-                        <div class="app-screen" id="screen-trust">
-                            <div class="screen-header">Trust Score</div>
-                            <div class="screen-content center-flex">
-                                <div class="trust-ring pulse-animation">
-                                    <span class="trust-score-value">850</span>
-                                </div>
-                                <p class="balance-label" style="margin-top:20px">Excellent Standing</p>
-                            </div>
-                        </div>
-
-                        <!-- Screen 4: Automations -->
-                        <div class="app-screen" id="screen-auto">
-                            <div class="screen-header">Automations</div>
-                            <div class="screen-content">
-                                <div class="demo-widget active-rule">
-                                    <strong>Paycheck Rule</strong>
-                                    <p>If paycheck arrives → move 10% to savings</p>
-                                </div>
-                                <div class="demo-widget">
-                                    <strong>Bill Staging</strong>
-                                    <p>Hold $120 for Insurance on 5th</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Screen 5: Lending -->
-                        <div class="app-screen" id="screen-lend">
-                            <div class="screen-header">Lending</div>
-                            <div class="screen-content center-flex">
-                                <div class="lending-card">
-                                    <h3>Pilot Credit</h3>
-                                    <div class="balance-display">$750</div>
-                                    <p>Available Instantly</p>
-                                    <div class="demo-btn">Withdraw</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Tab Bar -->
-                        <div class="tab-bar">
-                            <div class="tab-icon active" data-target="screen-cmd">◎</div>
-                            <div class="tab-icon" data-target="screen-money">$</div>
-                            <div class="tab-icon" data-target="screen-trust">●</div>
-                            <div class="tab-icon" data-target="screen-auto">⚡</div>
-                            <div class="tab-icon" data-target="screen-lend">💳</div>
+                        <!-- Lending Unlock Card -->
+                        <div class="lending-unlock">
+                            <p class="unlock-title">Lending Unlocked</p>
+                            <p>You're now trusted for</p>
+                            <div class="unlock-amount">$1,000</div>
+                            <p class="unlock-footer">Available instantly.</p>
                         </div>
                     </div>
                 </div>
@@ -363,30 +336,53 @@
 
         revealElements.forEach(el => revealObserver.observe(el));
 
-        // Phone Demo Carousel
-        const phoneScreens = document.querySelectorAll('.app-screen');
-        const tabIcons = document.querySelectorAll('.tab-icon');
-        let currentScreenIdx = 0;
-
-        function showScreen(idx) {
-            if (!phoneScreens.length) return;
-            phoneScreens.forEach(s => s.classList.remove('active'));
-            tabIcons.forEach(t => t.classList.remove('active'));
-            phoneScreens[idx].classList.add('active');
-            tabIcons[idx].classList.add('active');
+        // Phone Demo Storyboard
+        const iphoneScreen = document.querySelector('.iphone-screen');
+        const trustVal = document.querySelector('.trust-val');
+        let storyboardTimeout;
+        
+        async function runStoryboard() {
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+            
+            // Reset state
+            iphoneScreen.className = 'iphone-screen';
+            trustVal.innerText = '842';
+            
+            const wait = ms => new Promise(r => setTimeout(r, ms));
+            
+            // 0s: Initial Dashboard showing
+            await wait(2500);
+            
+            // 2.5s: Insight alert slides up
+            iphoneScreen.classList.add('show-insight');
+            await wait(2500);
+            
+            // 5s: Simulate user tap on "Create payment plan"
+            iphoneScreen.classList.add('tap-plan');
+            await wait(300); // short tap duration
+            iphoneScreen.classList.remove('tap-plan');
+            
+            // 5.5s: Alert disappears, automation created
+            await wait(200);
+            iphoneScreen.classList.remove('show-insight');
+            iphoneScreen.classList.add('show-automation');
+            
+            // 8.5s: Trust score bumps up
+            await wait(3000);
+            iphoneScreen.classList.add('trust-bump');
+            trustVal.innerText = '845';
+            
+            // 11.5s: Lending unlocks
+            await wait(3000);
+            iphoneScreen.classList.add('show-lending');
+            
+            // 20s: Reset and loop
+            await wait(8500);
+            runStoryboard();
         }
 
-        function cycleScreens() {
-            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                return;
-            }
-            if (phoneScreens.length) {
-                currentScreenIdx = (currentScreenIdx + 1) % phoneScreens.length;
-                showScreen(currentScreenIdx);
-            }
-        }
-
-        setInterval(cycleScreens, 3500);
+        // Start storyboard loop
+        runStoryboard();
     </script>
 </body>
 </html>

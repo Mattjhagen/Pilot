@@ -25,12 +25,17 @@ The landing page adheres strictly to the Pilot Design Language (PDL), utilizing:
 - The "Join Early Access" CTA is currently wired to a `mailto:` link (`earlyaccess@pilotfinance.space`) while the product is in prototype review.
 - The "Watch Demo" button triggers an alert indicating it is coming soon.
 
-### Interactive Demo Phone
+### Interactive Storyboard Demo
 - **Location:** Added after the "Meet your AI CFO" narrative section.
-- **Screens:** Cycles continuously through Command Center, Money, Trust Score, Automations, and Lending screens.
-- **Tech:** Uses pure HTML/CSS representations of Pilot app screens for speed and lightweight maintenance. No image assets are required.
-- **Customization:** To add or modify screens, edit the HTML inside `.iphone-screen` and update the matching tab bar icons. The javascript will automatically detect and cycle through all elements containing the `.app-screen` class.
-- **Reduced Motion:** If `prefers-reduced-motion` is enabled, the Javascript specifically halts the automatic 3.5s cycle loop and CSS transitions are disabled, keeping the user on a static initial frame.
+- **Narrative Sequence:** Instead of static tabs, the phone runs a 30-second JavaScript storyboard simulating the AI CFO in action:
+  1. Shows the morning dashboard (Health, Runway, Trust).
+  2. Slides up an insight alert about an electric bill.
+  3. Simulates tapping "Create payment plan".
+  4. Automatically displays the created automation rule.
+  5. Pulses the Trust Score and increases it from 842 to 845.
+  6. Fades in a Pilot Credit unlock for $1,000.
+- **Tech:** Uses pure HTML/CSS representations. Managed by an async `runStoryboard()` function in `index.html` that toggles CSS classes (`.show-insight`, `.trust-bump`, `.show-lending`) on a timeline.
+- **Reduced Motion:** If `prefers-reduced-motion` is enabled, the storyboard halts before starting, keeping the user securely on the static initial dashboard frame without sudden animations.
 
 ## What Needs to be Replaced Before Public Launch
 - Replace the `mailto:` CTA with an actual waitlist/backend integration (e.g., Mailchimp, custom API).
