@@ -63,32 +63,32 @@ a { text-decoration: none; color: inherit; }
 
 /* Typography */
 h1 {
-    font-size: clamp(3.25rem, 9vw, 6.25rem);
-    font-weight: 700;
-    letter-spacing: -0.045em;
-    line-height: 1.0;
-    margin-bottom: 1.5rem;
+    font-size: clamp(4.5rem, 13vw, 8rem);
+    font-weight: 800;
+    letter-spacing: -0.055em;
+    line-height: 0.93;
+    margin-bottom: 1.75rem;
 }
 
 h2 {
-    font-size: clamp(2.25rem, 5.5vw, 3.5rem);
-    font-weight: 600;
-    letter-spacing: -0.035em;
-    line-height: 1.1;
+    font-size: clamp(2.75rem, 7vw, 5rem);
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 1.05;
     margin-bottom: 1rem;
 }
 
 h3 {
-    font-size: 1.375rem;
+    font-size: 1.5rem;
     font-weight: 600;
-    letter-spacing: -0.025em;
+    letter-spacing: -0.03em;
     margin-bottom: 0.5rem;
 }
 
 h4 {
     font-size: 1.0625rem;
     font-weight: 600;
-    letter-spacing: -0.015em;
+    letter-spacing: -0.02em;
     margin-bottom: 0.5rem;
 }
 
@@ -103,11 +103,11 @@ p {
 .section {
     max-width: 1040px;
     margin: 0 auto;
-    padding: 120px 5%;
+    padding: 140px 5%;
 }
 
 .section-label {
-    font-size: 0.75rem;
+    font-size: 0.6875rem;
     font-weight: 600;
     letter-spacing: 0.12em;
     text-transform: uppercase;
@@ -140,9 +140,9 @@ p {
 }
 
 .logo {
-    font-size: 1.375rem;
-    font-weight: 700;
-    letter-spacing: -0.05em;
+    font-size: 1.25rem;
+    font-weight: 800;
+    letter-spacing: -0.055em;
 }
 
 .nav-links {
@@ -219,9 +219,9 @@ p {
 
 /* Hero */
 .hero {
-    max-width: 1040px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 120px 5% 100px;
+    padding: 160px 5% 130px;
     text-align: center;
     position: relative;
     overflow: visible;
@@ -271,40 +271,40 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 2rem;
-    padding: 28px 40px;
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    max-width: 520px;
+    gap: 0;
     margin: 0 auto;
+    max-width: 560px;
 }
 
 .proof-item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 4px;
+    gap: 6px;
+    flex: 1;
 }
 
 .proof-num {
-    font-size: 2rem;
-    font-weight: 500;
-    letter-spacing: -0.04em;
+    font-size: 2.75rem;
+    font-weight: 700;
+    letter-spacing: -0.05em;
     line-height: 1;
+    color: var(--text);
 }
 
 .proof-label {
-    font-size: 0.75rem;
-    color: var(--text-muted);
+    font-size: 0.6875rem;
+    font-weight: 400;
+    color: var(--text-dim);
     text-transform: uppercase;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.1em;
 }
 
 .proof-divider {
     width: 1px;
-    height: 40px;
+    height: 48px;
     background: var(--border);
+    flex-shrink: 0;
 }
 
 /* Process Steps */
@@ -355,26 +355,27 @@ p {
 .features-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 1px;
-    background: var(--border);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    overflow: hidden;
+    gap: 1.25rem;
     margin-top: 3rem;
 }
 
 .feature-card {
-    background: var(--bg);
-    padding: 2rem;
-    transition: background 0.2s ease;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 2rem 2rem 2.25rem;
+    transition: background 0.2s ease, border-color 0.2s ease;
 }
 
-.feature-card:hover { background: var(--bg-card); }
+.feature-card:hover {
+    background: rgba(255,255,255,0.04);
+    border-color: var(--border-strong);
+}
 
 .feature-icon {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
     color: var(--text-dim);
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem;
 }
 
 .feature-card h4 { color: var(--text); margin-bottom: 0.5rem; }
@@ -449,9 +450,9 @@ p {
 }
 
 .price-num {
-    font-size: 3.5rem;
-    font-weight: 500;
-    letter-spacing: -0.05em;
+    font-size: 4rem;
+    font-weight: 700;
+    letter-spacing: -0.055em;
     line-height: 1;
 }
 
@@ -1339,19 +1340,18 @@ p {
 @media (max-width: 768px) {
     .nav-links { display: none; }
 
-    .hero { padding: 80px 5% 60px; }
+    .hero { padding: 100px 5% 72px; }
 
-    h1 { font-size: 2.75rem; }
-    h2 { font-size: 2rem; }
+    h1 { font-size: 3.25rem; letter-spacing: -0.045em; }
+    h2 { font-size: 2.5rem; letter-spacing: -0.035em; }
 
     .hero-actions { flex-direction: column; align-items: center; }
 
     .hero-social-proof {
-        gap: 1.25rem;
-        padding: 20px 24px;
+        gap: 0;
     }
 
-    .proof-num { font-size: 1.5rem; }
+    .proof-num { font-size: 2rem; }
 
     .section { padding: 80px 5%; }
 
