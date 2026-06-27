@@ -396,6 +396,8 @@
             <h2>Join the waitlist.</h2>
             <form id="waitlist-form" class="waitlist-form">
                 <input type="email" id="waitlist-email" placeholder="Email address" required>
+                <!-- Honeypot -->
+                <input type="text" id="waitlist-companyWebsite" name="companyWebsite" style="display:none" tabindex="-1" autocomplete="off">
                 <button type="submit" id="waitlist-submit" class="btn-primary">Reserve Spot</button>
             </form>
             <div id="waitlist-message" class="form-message"></div>
@@ -671,7 +673,9 @@
             waitlistForm.addEventListener('submit', async (e) => {
                 e.preventDefault();
                 const emailInput = document.getElementById('waitlist-email');
+                const honeypotInput = document.getElementById('waitlist-companyWebsite');
                 const email = emailInput.value.trim();
+                const companyWebsite = honeypotInput ? honeypotInput.value : '';
                 if (!email) return;
 
                 // Loading state
@@ -684,7 +688,7 @@
                     const response = await fetch(PILOT_CONFIG.waitlistEndpoint, {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ email })
+                        body: JSON.stringify({ email, companyWebsite })
                     });
 
                     const data = await response.json();

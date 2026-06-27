@@ -61,7 +61,7 @@ const PILOT_CONFIG = {
 };
 ```
 
-## 5. Manual Testing Steps
+## 5. Manual Testing Steps & Checklist
 
 Once deployed and configured:
 1. Open `https://pilotfinance.space` (or serve `docs/index.html` locally).
@@ -71,3 +71,24 @@ Once deployed and configured:
 5. **Verify Supabase:** Check the `waitlist` table to ensure the new email row was created.
 6. **Verify Resend:** Check your inbox to ensure the welcome email was delivered.
 7. **Test Duplicates:** Submit the exact same email address again. The UI should gracefully handle it and state "You’re already on the early access list."
+
+### Deleting Test Signups
+If you used a real email address for manual testing (e.g., `test@example.com`), you can delete it from the Supabase SQL Editor:
+```sql
+DELETE FROM waitlist WHERE email = 'test@example.com';
+```
+Do not delete real signups.
+
+## 6. Anti-Abuse Protections (Honeypot)
+
+The waitlist system includes several layers of protection:
+* **Honeypot Field:** A hidden input field named `companyWebsite` is injected into the frontend form. Normal users will never see or fill this field. If a bot scrapes the form and submits data containing this field, the Edge Function silently returns a success response (`200 OK`) without actually inserting the email into the database or triggering Resend.
+* **Email Validation:** The Edge Function strictly enforces regex validation and a 254-character limit.
+* **HTTP Methods:** Only `POST` and `OPTIONS` (CORS) are allowed. All other methods are rejected with `405 Method Not Allowed`.
+* **Metadata Capture:** The function records the `user_agent` header and the `source` parameter to help identify spam patterns.
+
+## 7. Troubleshooting
+
+* **CORS Errors:** If you see CORS errors in the browser console, ensure the Edge Function explicitly returns the `Access-Control-Allow-Origin: *` (or restricted domain) headers in both the `OPTIONS` preflight and the `POST` response.
+* **Duplicate Emails:** If testing duplicate behavior, ensure you're passing an exact match. The backend normalizes emails to lowercase and trims whitespace before inserting.
+* **Resend Sender Verification:** If emails are not arriving, check your Resend dashboard. Your `FROM_EMAIL` (e.g., `earlyaccess@pilotfinance.space`) must be verified through DNS records.

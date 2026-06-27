@@ -12,6 +12,10 @@ serve(async (req) => {
     return new Response('ok', { headers: corsHeaders })
   }
 
+  if (req.method !== 'POST') {
+    return new Response('Method Not Allowed', { headers: corsHeaders, status: 405 })
+  }
+
   try {
     const supabaseUrl = Deno.env.get('SUPABASE_URL')!
     const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!
@@ -26,23 +30,59 @@ serve(async (req) => {
       })
     }
 
-    const { email, source = 'landing_page' } = await req.json()
+    let { email, source = 'landing_page', companyWebsite } = await req.json()
+
+    // Honeypot check
+    if (companyWebsite && companyWebsite.trim() !== '') {
+      // Silently return success for bots
+      console.log('Bot detected via honeypot');
+      return new Response(JSON.stringify({ message: 'success' }), {
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        status: 200,
+      })
+    }
+
+    if (!email || typeof email !== 'string') {
+      return new Response(JSON.stringify({ error: 'Missing email' }), {
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        status: 400,
+      })
+    }
+
+    // Normalize and trim
+    email = email.trim().toLowerCase()
+
+    if (email.length > 254) {
+      return new Response(JSON.stringify({ error: 'Email too long' }), {
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        status: 400,
+      })
+    }
 
     // Validate email
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-    if (!email || !emailRegex.test(email)) {
+    if (!emailRegex.test(email)) {
       return new Response(JSON.stringify({ error: 'Invalid email address' }), {
         headers: { ...corsHeaders, 'Content-Type': 'application/json' },
         status: 400,
       })
     }
 
+    const user_agent = req.headers.get('user-agent') || 'unknown'
+
     const supabase = createClient(supabaseUrl, supabaseKey)
 
     // Insert into waitlist
-    const { error: insertError } = await supabase
+    let { error: insertError } = await supabase
       .from('waitlist')
-      .insert([{ email, source }])
+      .insert([{ email, source, user_agent }])
+
+    // Fallback if user_agent column doesn't exist
+    if (insertError && insertError.code === 'PGRST204') {
+      console.warn('user_agent column missing, falling back to basic insert');
+      const retry = await supabase.from('waitlist').insert([{ email, source }])
+      insertError = retry.error
+    }
 
     if (insertError) {
       // 23505 is the PostgreSQL error code for unique violation
@@ -66,13 +106,13 @@ serve(async (req) => {
       body: JSON.stringify({
         from: fromEmail,
         to: email,
-        subject: 'Welcome to the Pilot Early Access List',
+        subject: "Welcome aboard — you're on the Pilot early access list",
         html: `
           <div style="font-family: sans-serif; color: #111;">
             <h2>You're on the list.</h2>
-            <p>Thanks for requesting early access to Pilot.</p>
-            <p>We are currently operating in a closed prototype phase, but we'll reach out as soon as a spot opens up for you.</p>
-            <p>Best,<br/>The Pilot Team</p>
+            <p>Thanks for joining Pilot.</p>
+            <p>Pilot is currently in prototype review. You'll receive updates as private testing opens.</p>
+            <p>Signed,<br/>P3 Lending LLC</p>
           </div>
         `
       })
