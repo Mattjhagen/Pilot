@@ -17,7 +17,9 @@ create table if not exists waitlist (
   referral_code text unique,
   referred_by text,
   user_agent text,
-  created_at timestamptz default now()
+  ip_hash text,
+  created_at timestamptz default now(),
+  updated_at timestamptz default now()
 );
 ```
 

@@ -69,20 +69,23 @@ serve(async (req) => {
     }
 
     const user_agent = req.headers.get('user-agent') || 'unknown'
+    const ip = req.headers.get('x-forwarded-for')
+    let ip_hash = null
+
+    if (ip) {
+      const encoder = new TextEncoder()
+      const data = encoder.encode(ip.split(',')[0].trim()) // take the first IP if multiple
+      const hashBuffer = await crypto.subtle.digest('SHA-256', data)
+      const hashArray = Array.from(new Uint8Array(hashBuffer))
+      ip_hash = hashArray.map(b => b.toString(16).padStart(2, '0')).join('')
+    }
 
     const supabase = createClient(supabaseUrl, supabaseKey)
 
     // Insert into waitlist
-    let { error: insertError } = await supabase
+    const { error: insertError } = await supabase
       .from('waitlist')
-      .insert([{ email, source, user_agent }])
-
-    // Fallback if user_agent column doesn't exist
-    if (insertError && insertError.code === 'PGRST204') {
-      console.warn('user_agent column missing, falling back to basic insert');
-      const retry = await supabase.from('waitlist').insert([{ email, source }])
-      insertError = retry.error
-    }
+      .insert([{ email, source, user_agent, ip_hash }])
 
     if (insertError) {
       // 23505 is the PostgreSQL error code for unique violation
