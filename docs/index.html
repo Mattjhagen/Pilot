@@ -118,11 +118,11 @@
                             
                             <div class="dashboard-grid">
                                 <div class="glass-widget">
-                                    <div class="widget-value">92</div>
+                                    <div class="widget-value" id="demo-health-val">92</div>
                                     <div class="widget-label">Financial Health</div>
                                 </div>
                                 <div class="glass-widget">
-                                    <div class="widget-value">4.2<span style="font-size:0.6em; margin-left:2px">mo</span></div>
+                                    <div class="widget-value" id="demo-runway-val">4.2<span style="font-size:0.6em; margin-left:2px">mo</span></div>
                                     <div class="widget-label">Cash Runway</div>
                                 </div>
                                 <div class="glass-widget trust-widget">
@@ -158,6 +158,31 @@
                             <p>You're now trusted for</p>
                             <div class="unlock-amount">$1,000</div>
                             <p class="unlock-footer">Available instantly.</p>
+                        </div>
+
+                        <!-- Daily Brief Widget -->
+                        <div class="daily-brief">
+                            <div class="brief-title">Good morning.</div>
+                            <div class="brief-subtitle">Yesterday Pilot:</div>
+                            <div class="brief-list">
+                                <div class="brief-item"><span class="check-icon">✓</span> Prevented an overdraft</div>
+                                <div class="brief-item"><span class="check-icon">✓</span> Automated your electric bill</div>
+                                <div class="brief-item"><span class="check-icon">✓</span> Increased your Trust Score</div>
+                                <div class="brief-item"><span class="check-icon">✓</span> Saved $143 this month</div>
+                            </div>
+                        </div>
+
+                        <!-- Final Message Screen -->
+                        <div class="final-message-screen">
+                            <div class="final-msg-main">Pilot works while you live your life.</div>
+                            <div class="final-msg-sub">Financial intelligence that never sleeps.</div>
+                        </div>
+
+                        <!-- Logo Finale Screen -->
+                        <div class="logo-finale-screen">
+                            <div class="finale-orb pulse-animation"></div>
+                            <div class="finale-logo">Pilot</div>
+                            <div class="finale-tagline">The AI Financial Operating System.</div>
                         </div>
                     </div>
                 </div>
@@ -339,7 +364,8 @@
         // Phone Demo Storyboard
         const iphoneScreen = document.querySelector('.iphone-screen');
         const trustVal = document.querySelector('.trust-val');
-        let storyboardTimeout;
+        const healthVal = document.querySelector('#demo-health-val');
+        const runwayVal = document.querySelector('#demo-runway-val');
         
         async function runStoryboard() {
             if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
@@ -347,6 +373,8 @@
             // Reset state
             iphoneScreen.className = 'iphone-screen';
             trustVal.innerText = '842';
+            healthVal.innerHTML = '92';
+            runwayVal.innerHTML = '4.2<span style="font-size:0.6em; margin-left:2px">mo</span>';
             
             const wait = ms => new Promise(r => setTimeout(r, ms));
             
@@ -359,7 +387,7 @@
             
             // 5s: Simulate user tap on "Create payment plan"
             iphoneScreen.classList.add('tap-plan');
-            await wait(300); // short tap duration
+            await wait(300);
             iphoneScreen.classList.remove('tap-plan');
             
             // 5.5s: Alert disappears, automation created
@@ -376,8 +404,27 @@
             await wait(3000);
             iphoneScreen.classList.add('show-lending');
             
-            // 20s: Reset and loop
-            await wait(8500);
+            // 15.5s: Transition to Tomorrow Morning
+            await wait(4000);
+            iphoneScreen.classList.remove('show-automation', 'show-lending', 'trust-bump');
+            healthVal.innerHTML = '95<span style="color:#00ff66; font-size:0.5em; vertical-align:middle; margin-left:4px">↑</span>';
+            runwayVal.innerHTML = '5.0<span style="font-size:0.6em; margin-left:2px">mo</span>';
+            
+            // 17s: Slide in Daily Brief
+            await wait(1500);
+            iphoneScreen.classList.add('show-brief');
+            
+            // 22s: Fade to Final Message
+            await wait(5000);
+            iphoneScreen.classList.add('show-final-msg');
+            
+            // 27s: Fade to Logo Finale
+            await wait(5000);
+            iphoneScreen.classList.remove('show-final-msg');
+            iphoneScreen.classList.add('show-logo-finale');
+            
+            // 32s: Reset and loop
+            await wait(5000);
             runStoryboard();
         }
 

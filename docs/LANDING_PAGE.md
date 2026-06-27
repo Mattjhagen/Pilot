@@ -27,14 +27,18 @@ The landing page adheres strictly to the Pilot Design Language (PDL), utilizing:
 
 ### Interactive Storyboard Demo
 - **Location:** Added after the "Meet your AI CFO" narrative section.
-- **Narrative Sequence:** Instead of static tabs, the phone runs a 30-second JavaScript storyboard simulating the AI CFO in action:
+- **Narrative Sequence:** Instead of static tabs, the phone runs a 36-second JavaScript storyboard simulating the AI CFO in action:
   1. Shows the morning dashboard (Health, Runway, Trust).
   2. Slides up an insight alert about an electric bill.
   3. Simulates tapping "Create payment plan".
   4. Automatically displays the created automation rule.
   5. Pulses the Trust Score and increases it from 842 to 845.
   6. Fades in a Pilot Credit unlock for $1,000.
-- **Tech:** Uses pure HTML/CSS representations. Managed by an async `runStoryboard()` function in `index.html` that toggles CSS classes (`.show-insight`, `.trust-bump`, `.show-lending`) on a timeline.
+  7. Transitions to "Tomorrow Morning" with updated stats (Health 95, Runway 5.0).
+  8. Slides in a Daily Brief summarizing yesterday's AI actions.
+  9. Fades to a cinematic quote: "Pilot works while you live your life. Financial intelligence that never sleeps."
+  10. Ends on the Pilot logo and tagline before looping.
+- **Tech:** Uses pure HTML/CSS representations. Managed by an async `runStoryboard()` function in `index.html` that toggles CSS classes (`.show-insight`, `.trust-bump`, `.show-lending`, etc.) on a timeline.
 - **Reduced Motion:** If `prefers-reduced-motion` is enabled, the storyboard halts before starting, keeping the user securely on the static initial dashboard frame without sudden animations.
 
 ## What Needs to be Replaced Before Public Launch
