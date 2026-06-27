@@ -434,7 +434,253 @@ Positive
 
 Tradeoffs
 • We lose the visual color preview afforded by `.xcassets` in Xcode's interface.
-• Visual regressions must be caught manually via Previews rather than automated image comparison.⸻
+• Visual regressions must be caught manually via Previews rather than automated image comparison.
+
+⸻
+
+ADR-008
+
+Date
+
+2026-06-26
+
+Status
+
+Accepted
+
+Decision
+
+Adopt a multi-Router architecture utilizing `NavigationStack` (with `NavigationSplitView` fallback on larger screens) for each main tab, managed by a central `AppCoordinator`.
+
+Context
+
+Pilot requires a navigation system that scales well as new features are added, supports programmatic deep-linking, and handles complex hierarchies (tabs, stacks, and modals). A single global navigation path is insufficient for a multi-tab application where users expect state preservation within each tab.
+
+Alternatives Considered
+
+• A single monolithic global Router.
+• Standard `@State` variables directly inside views without coordinators.
+• Third-party routing frameworks (e.g., TCA Navigation, XCoordinator).
+
+Decision
+
+1. **Central AppCoordinator**: Manages the currently selected `AppTab` and interprets incoming deep links.
+2. **Feature Routers**: Each tab (Home, Money, Wealth, Trust, AI, Automations) instantiates its own generic `Router<Route>`. This router holds a type-safe `NavigationPath` bound to a specific route enum.
+3. **Modals**: Global sheets are handled via an optional `GlobalSheetRoute` on the router, providing a clean `.sheet(item:)` presentation pattern.
+4. **Adaptive Layout**: Root views adapt automatically based on `horizontalSizeClass`, rendering a `NavigationSplitView` on iPad/Mac and `NavigationStack` on iPhone.
+
+Consequences
+
+Positive
+• Strong type safety ensures invalid route transitions do not compile.
+• Clear separation of concerns (Views don't manage `NavigationPath`).
+• Excellent testability.
+• Native Apple APIs with zero external dependencies.
+
+Tradeoffs
+• Adds slight boilerplate when establishing a new major tab or route enum.
+
+⸻
+
+ADR-009
+
+Date
+
+2026-06-26
+
+Status
+
+Accepted
+
+Decision
+
+Construct the Home Dashboard using an adaptive `LazyVStack` (iPhone) / `LazyVGrid` (iPad) strategy, orchestrated by a discrete `HomeDashboardViewModel` communicating with an injected `HomeService`. Utilize native SwiftUI Previews over 3rd-party snapshot frameworks.
+
+Context
+
+Phase 04 requires aggregating multiple financial data streams (bills, money, trust score) into a single cohesive "Command Center". The dashboard must remain highly performant, testable, and adaptive to multiple Apple device form factors. Furthermore, we must strictly adhere to the `AGENTS.md` directive of avoiding unnecessary dependencies.
+
+Alternatives Considered
+
+• A single monolithic view with no sub-components.
+• Fetching data directly within the `.task` modifiers of individual sub-views.
+• `swift-snapshot-testing` for verifying widget layouts.
+
+Decision
+
+1. **Architecture**: We implemented a strict MVVM pattern. The `HomeDashboardViewModel` holds all state and exposes a unified `refresh()` method that fires parallel tasks (`async let`). The View is purely responsible for rendering.
+2. **Adaptive Layout**: We use `@Environment(\.horizontalSizeClass)` to determine whether to render widgets in a single-column `LazyVStack` or a multi-column `LazyVGrid`.
+3. **Testing & Snapshots**: Conforming to ADR-007 and `AGENTS.md`, we rejected third-party snapshot frameworks. Visual layouts are verified directly through comprehensive SwiftUI Previews within Xcode, testing multiple Dynamic Type sizes and Dark Mode variants natively.
+
+Consequences
+
+Positive
+• The unified `refresh()` method makes pull-to-refresh implementation trivial and cohesive.
+• View rendering is decoupled from data generation, allowing easy substitution of `HomeMockService` with a real network service later.
+• Adaptive layout scales beautifully from iPhone mini to Mac.
+
+Tradeoffs
+• Managing multiple optional `@Published` properties in the ViewModel can become verbose.
+
+⸻
+
+ADR-010
+
+Date
+
+2026-06-26
+
+Status
+
+Accepted
+
+Decision
+
+Build a bespoke Conversational UI (AI Copilot) directly using SwiftUI `ScrollViewReader` and custom layout primitives rather than adopting third-party Chat SDKs. Maintain conversational state purely in-memory for this UI-focused phase.
+
+Context
+
+Pilot requires a highly customized AI assistant experience integrating actionable financial cards (`CopilotCard`), context suggestions (`CopilotSuggestion`), and strict adherence to our newly established Design System. Third-party UI SDKs for chat interfaces often force a generic look-and-feel and introduce heavy dependencies that violate `AGENTS.md`. 
+
+Alternatives Considered
+
+• Import a third-party framework like `MessageKit` or a SwiftUI chat library.
+• Store messages immediately in `SwiftData` or `UserDefaults`.
+
+Decision
+
+1. **Custom Chat UI**: We built `CopilotView` entirely from scratch using native SwiftUI constructs (`ScrollViewReader`, `LazyVStack`). This allows us to interleave complex financial interactive cards natively within the chat stream.
+2. **In-Memory State**: `ConversationViewModel` stores the message array solely in memory during this phase to isolate UI validation from data persistence concerns. Persistence architectures (e.g. `SwiftData`) will be introduced in a future phase.
+3. **Structured Cards**: AI responses utilize a `CopilotCard` enum rather than raw text parsing, ensuring a robust, type-safe "Financial Jarvis" experience.
+
+Consequences
+
+Positive
+• Absolute control over the aesthetic and interactive feel of the assistant.
+• Native integration with Pilot's Theme and Components (haptics, spacing, dynamic type).
+• Zero external dependencies.
+
+Tradeoffs
+• Managing automatic scrolling (via `ScrollViewReader` and `.onChange`) requires careful handling of SwiftUI edge cases.
+• State is lost when the view is destroyed (until persistence is added).
+
+⸻
+
+ADR-011
+
+Date
+
+2026-06-26
+
+Status
+
+Accepted
+
+Decision
+
+In the Money module, accounts will be grouped by `AccountType` in the `MoneyOverviewViewModel` rather than presenting a flat list. Currency formatting and sorting logic will reside entirely within the ViewModels or extensions, keeping the Views strictly declarative.
+
+Context
+
+Phase 06 introduces core banking structures. Users often have multiple accounts (e.g., a primary checking, a joint checking, a savings, and two credit cards). Presenting a flat list makes it difficult to quickly scan for liquidity versus debt.
+
+Alternatives Considered
+
+• Flat list sorted purely by balance.
+• Forcing the `MoneyService` to return a nested dictionary.
+
+Decision
+
+1. **ViewModel Grouping**: The `MoneyMockService` returns a flat `[Account]` array, keeping the data layer simple. The `MoneyOverviewViewModel` groups this array by `AccountType` (`.checking`, `.savings`, `.creditCard`).
+2. **Explicit UI Ordering**: `MoneyOverviewView` loops over a predefined array of `AccountType` to ensure Checking is always rendered at the top, followed by Savings, then Credit Cards.
+3. **Transaction Grouping**: Similarly, `AccountViewModel` handles searching and grouping `[Transaction]` arrays by day, isolating complex `Calendar` logic from the UI.
+
+Consequences
+
+Positive
+• The UI hierarchy is highly predictable for the user.
+• Views remain incredibly thin, only observing structured data.
+
+Tradeoffs
+• ViewModels take on slightly more compute load when parsing and grouping large arrays. (Mitigated by Swift's highly optimized `Dictionary(grouping:by:)`).
+
+⸻
+
+ADR-012
+
+Date
+
+2026-06-26
+
+Status
+
+Accepted
+
+Decision
+
+For the Phase 07 mocked Trust Score, calculate the overall aggregate score deterministically on the client via a weighted average of `TrustMetric` objects inside the `TrustOverviewViewModel`. Additionally, utilize native Swift `Charts` for historical rendering.
+
+Context
+
+The Trust score replaces standard FICO scores. We need a way to display a realistic-looking final score derived from constituent metrics (Income Stability, Savings Habits) without a real backend. Furthermore, we need to chart this history smoothly.
+
+Alternatives Considered
+
+• Fetch a hardcoded overall score directly from `TrustMockService`.
+• Draw custom line shapes for the history chart using `Path`.
+
+Decision
+
+1. **Client-Side Weighted Average**: The `TrustOverviewViewModel` calculates the score. By exposing the individual metric weights (e.g., `0.4`), we can write deterministic unit tests verifying the exact score output. *Note: In production (Phase 09+), this calculation will be moved to the backend to protect proprietary scoring algorithms.*
+2. **Swift Charts**: We adopt the native `Charts` framework to render the `TrustDetailView` history. This provides automatic accessibility (VoiceOver reads chart data points naturally) and perfectly aligns with the `AGENTS.md` constraint of using native Apple APIs over third-party drawing libraries.
+
+Consequences
+
+Positive
+• The architecture is easily testable.
+• Swift Charts provides beautiful, animated, and accessible historical views with minimal code.
+
+Tradeoffs
+• The client-side calculation logic will eventually need to be deprecated/migrated to the backend.
+
+⸻
+
+ADR-013
+
+Date
+
+2026-06-26
+
+Status
+
+Accepted
+
+Decision
+
+In Phase 08 (Automations), we will use an in-memory storage service (`InMemoryAutomationsStorageService`) rather than `SwiftData`. Furthermore, natural language generation will be built into the `Automation` model itself by iterating over the component Enums.
+
+Context
+
+We need to build a rule engine UI capable of CRUD operations, but the underlying data schema (Triggers, Conditions, Actions) is highly volatile during rapid prototyping. Attempting to lock this into `SwiftData` immediately would introduce unnecessary schema migration headaches.
+
+Alternatives Considered
+
+• Immediate adoption of `SwiftData` with `@Model`.
+• Serializing to `UserDefaults`.
+
+Decision
+
+1. **In-Memory Storage**: By abstracting behind the `AutomationsStorageService` protocol, we can use an array-backed store for Phase 08. This allows us to prove the UI flow. We will migrate the concrete implementation to SwiftData/CloudKit in a future phase.
+2. **String Generation via Computed Property**: The `Automation.generatedSummary` property iterates over the arrays of Enums and constructs a human-readable sentence. While rudimentary, it is fast and deterministic, eliminating the need for a complex NLP layer right now.
+
+Consequences
+
+Positive
+• Maximum flexibility while defining the Trigger/Condition/Action schema.
+• Natural language summaries are instantly available and easy to unit test.
+
+Tradeoffs
+• Automations will not persist across app restarts until the storage layer is upgraded.⸻
 
 ADR-005
 

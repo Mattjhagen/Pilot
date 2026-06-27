@@ -7,37 +7,80 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01F66C71641E9EA559178AFE /* AIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C54E073E34D5AE894343C4 /* AIView.swift */; };
 		111781EF05243BE8086DCEB0 /* AnimationSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7FBFF9F52B06E6665FE81F /* AnimationSystem.swift */; };
+		13A401821709BB5CCDD59D4D /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B5FA0DD1E637439421AA50 /* AppCoordinator.swift */; };
 		1A6B54ADC9BD24224CD1F1C1 /* LoadingStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BD96245E980B2C9A3601FF /* LoadingStateView.swift */; };
-		1CABD1CD79AB11102C5BC345 /* NavigationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4974F55E6A3D5F0F121B9B /* NavigationCoordinator.swift */; };
+		1C30F03252C26E1DD72625AB /* MoneyModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09066321EE19FD8D430D9BD1 /* MoneyModels.swift */; };
 		1D41EE8C541E4E8270F43A53 /* Spacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C7BDE5008D0AED2E548F09 /* Spacing.swift */; };
+		1E527FF7DE9977D8A9F3610A /* RouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19477D03984BA396E720A4F3 /* RouterTests.swift */; };
 		20CAED6E48DA6F71A580EA11 /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054EA88DABC045970DBC1E5B /* HapticsManager.swift */; };
+		2325E63CB564B4C635B7ED2F /* MoneyViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A07930767A22C3AD21B532 /* MoneyViewModelTests.swift */; };
+		232CA599D58D0481275FB115 /* AutomationsOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7496F4F4AC1450E3DE8BE4 /* AutomationsOverviewView.swift */; };
 		2404B34EB0B03068172FAA04 /* PilotBottomBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65605B81755170E90A1ECE03 /* PilotBottomBar.swift */; };
+		27E21F5ED508B1E029BFB0E7 /* AutomationBuilderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D580DE59C014C03CC293BD5 /* AutomationBuilderViewModel.swift */; };
+		32CF25538A05955782168B64 /* AutomationsOverviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF089907CD91235575E2A22D /* AutomationsOverviewViewModel.swift */; };
 		3E0C4A9FC940555D54417C45 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1479E50F7FC143CEC55EFA78 /* Localizable.strings */; };
 		3FA1732EDBCD111F8806CD67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30B3480AEF76A28286FD4B3C /* Assets.xcassets */; };
+		422EC34A100D1F59F0C23D78 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF341C025832599EE6E69B0 /* Router.swift */; };
 		42EB286F5F504A40A801A5EB /* StandardSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6089F276372195A7190B4A /* StandardSheet.swift */; };
 		477BF6C1260996FF3F7E1A90 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74F822F3A24B801B5B79C7 /* AppState.swift */; };
 		48580888AFE5B72A8D8236B3 /* PilotIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BADD6DD41A2BD872FDCC47 /* PilotIcon.swift */; };
 		49988DD938F38BD4A5FB53F1 /* AppConfigurationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19455E9B8C74AAC74625FCD8 /* AppConfigurationTests.swift */; };
+		510FEF4F1F611F744C8DAA8D /* AutomationSimulationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629E6FD6184F22E381D0781C /* AutomationSimulationView.swift */; };
+		52E4663D04236C71A459D2F6 /* AutomationBuilderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190AA7D21314A437EF488601 /* AutomationBuilderView.swift */; };
+		63A73444C277C2D348876658 /* HomeDashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AFFE05EFF4786F3988D7074 /* HomeDashboardViewModel.swift */; };
 		655A91C34D9FBA0A30627394 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F29153C141B5B13E7FC0197 /* AppConfiguration.swift */; };
+		65C5BED0C8883A3E6016548D /* MoneyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F516E29E4D6507197651BE0D /* MoneyView.swift */; };
+		660476A2033DB3DCD7B95E18 /* TrustMockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15EBBAD816EFA25FF3E9B9E /* TrustMockService.swift */; };
 		662A8B0CF08F5D85BB71266E /* DesignSystemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F819FCDFDCDB1E7A35A31D5 /* DesignSystemTests.swift */; };
+		6C9E10EAEC327F8FED8C338B /* TrustViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B801B8434CC6674DBB78F0 /* TrustViewModelTests.swift */; };
+		70BE27D4B2F560FF559515AE /* CopilotViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D19BC4E496190844FC6BC3 /* CopilotViewModelTests.swift */; };
 		73DAF54920DA4C2720F6FA71 /* MockDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1FD8202E8D027C8A1691C2 /* MockDependencyContainer.swift */; };
+		7FA15DA1BDBCE1D0A7D5867E /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4179A93F8F4C166CCD458C90 /* HomeViewModelTests.swift */; };
 		801E85C58133F151BBBD2444 /* GlassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978B4DABC181E8A583BF4201 /* GlassView.swift */; };
+		80EA84733F73DF3184E9C66B /* TrustScoreCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B02D9B808925F5BB40CD5C /* TrustScoreCard.swift */; };
+		8105E56A7D4C9C52CFF9A306 /* CopilotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB161D7B0EDE253DB3C73DC /* CopilotView.swift */; };
 		8624FF2DFDEC8D28EB3CDD8E /* PilotTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7F35DFAF7CB17ED63D89AE /* PilotTextField.swift */; };
 		868FDC8471174171FC1AAEE5 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFB247120E4E8F06ABFDD64 /* Logger.swift */; };
+		8842683E99D2222EC418C8E7 /* MoneyMockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAD56A7CEDCEDCA6DEB18C5 /* MoneyMockService.swift */; };
 		88810089A97BCB5841F60612 /* Typography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2933E40AA1E6944DD496305E /* Typography.swift */; };
+		8F04316788B1FCD1EB7C6005 /* AccountDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68C8D04B1A583BE8C4A3E37 /* AccountDetailView.swift */; };
+		96659B9929A9784291995713 /* AICopilotModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3E13FAFDF79FAE00A85A5B /* AICopilotModels.swift */; };
 		9778D75A4D000C2405F0F53E /* PilotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5169EE5BCE182D7B1AFBC22B /* PilotTests.swift */; };
 		9963BC0FA9FECD588A7C4ACF /* PilotCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E13B2B102B2558196BD9104 /* PilotCard.swift */; };
+		9C3EC38C30C0CD022CB9BDE9 /* HomeMockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F312BAB015965A08B67D6F4 /* HomeMockService.swift */; };
 		AB22E6C28DD609B63697FCAE /* PilotListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5D3C5BD514B7C15C0402B2 /* PilotListRow.swift */; };
+		ADCF43953EA2F22A025A7F89 /* WealthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46BCF20329F08F7EAD82AE7 /* WealthView.swift */; };
+		AEB2A6C1895F6F02578EFFAF /* TransactionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F00CB69EF1E0EE076441A76 /* TransactionDetailView.swift */; };
 		B07F6A3BF5F055A8132AE310 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DF31E6675E9D149702C0C1 /* EmptyStateView.swift */; };
-		C11ECABD02E75D7DC7EE077C /* NavigationTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7991DF39147BE9B6AC3C75 /* NavigationTransition.swift */; };
+		B0DD9C249E5E94792CA96302 /* TrustView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F77F7D58A9EDDB44064593 /* TrustView.swift */; };
+		B95EAE85D0952C669793111A /* ConversationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FD94C1AD2F3666FAB4807D /* ConversationViewModel.swift */; };
+		BCB645FCEE95741991729EF1 /* AutomationViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B9204B5795F4CC0ECC874A /* AutomationViewModelTests.swift */; };
+		BCC0945EDF819DF9EBF39F0C /* AutomationModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A0C590267FD31A317E53C0 /* AutomationModels.swift */; };
+		BFF36C5F38E177499538D9B8 /* AutomationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = F557405AE6AB348D28475BD6 /* AutomationServices.swift */; };
 		C4756A63F273ED67C02B5ECE /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB3ECE07BE871162B7E381F /* ThemeManager.swift */; };
+		C6F7F0A6DF4E6D002107CB26 /* RootTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A763D5EC9A741857536614FD /* RootTabView.swift */; };
 		C96A6B5EED33BF08B7F633B7 /* PreviewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B975EF61A5B00135B75E1 /* PreviewContainer.swift */; };
+		D0DD82D99C531A8DE4488716 /* IdentityVerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D7101C5CE8245BA869E88E /* IdentityVerificationView.swift */; };
+		D33F0059FADF665A52BA9020 /* RouteEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE2AC4977A948D91B87E4A7 /* RouteEnums.swift */; };
 		D71303A555E016FC5948F58F /* ColorSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF08E29AEF5FD61E248A802 /* ColorSystem.swift */; };
+		D981DE12E51D8E78A92BA597 /* HomeModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4681609E2484072E182420 /* HomeModels.swift */; };
+		D9EAABB43103D072B198FA1C /* MoneyViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D27D54C83211B4B4442C843 /* MoneyViewModels.swift */; };
 		E1C0DC51F5FA0133BDE56D62 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1320CBBA1158030090B1BE2F /* DependencyContainer.swift */; };
 		E35225C5358A35C4F04720AA /* PilotButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2875AADFA1B523A166B95F /* PilotButton.swift */; };
+		E3B28732C45AF90EB94E4E53 /* MoneyOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D5E520DB50AAC1067D9E04 /* MoneyOverviewView.swift */; };
+		E517570BD2BD46AC36F09BD1 /* TrustOverviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A39E19F1E102E74D6EED775 /* TrustOverviewViewModel.swift */; };
+		E6E1C82664B44EDC243E9DF6 /* HomeWidgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E32C7A2699669F59B28F5B /* HomeWidgets.swift */; };
+		E9E204E6343D0363DDC88949 /* TrustDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9899EA3C4DBE79C059CF9678 /* TrustDetailView.swift */; };
+		EC8B3D88B15B0ECDA50CDE70 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10227ADEFF811FD9821D273A /* HomeView.swift */; };
 		ED3131D8C43CB59A0DEEE91C /* PilotApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBE983CCDA722A187CF7D86 /* PilotApp.swift */; };
+		F139F78301CABC384BB9A6FC /* AutomationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27A4C838C17128F5FAF1316 /* AutomationsView.swift */; };
+		F2D0929F9422788B0B680A61 /* TrustOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CFAED7F25BFCFE84D652F5 /* TrustOverviewView.swift */; };
 		F308E2DEC3B2C05FF717582F /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43979AB68ADF879D3ADEDCCC /* AppError.swift */; };
+		F38333DF1036B02041010A22 /* TrustModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1E13A6CACE8BFE1B61BB64 /* TrustModels.swift */; };
+		FA5400FD80A9F2E4354B21A8 /* CopilotUIComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D559ED5DEDA766F96EB355 /* CopilotUIComponents.swift */; };
+		FA72BBC538195A5563C8369D /* CopilotMockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D662BA2C4AECE3EEC3A3B49 /* CopilotMockService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,41 +95,113 @@
 
 /* Begin PBXFileReference section */
 		054EA88DABC045970DBC1E5B /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
+		09066321EE19FD8D430D9BD1 /* MoneyModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyModels.swift; sourceTree = "<group>"; };
+		0D27D54C83211B4B4442C843 /* MoneyViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyViewModels.swift; sourceTree = "<group>"; };
+		0EB161D7B0EDE253DB3C73DC /* CopilotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopilotView.swift; sourceTree = "<group>"; };
 		0EB3ECE07BE871162B7E381F /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
+		10227ADEFF811FD9821D273A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		1320CBBA1158030090B1BE2F /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
 		1479E50F7FC143CEC55EFA78 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		18B801B8434CC6674DBB78F0 /* TrustViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustViewModelTests.swift; sourceTree = "<group>"; };
+		190AA7D21314A437EF488601 /* AutomationBuilderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutomationBuilderView.swift; sourceTree = "<group>"; };
 		19455E9B8C74AAC74625FCD8 /* AppConfigurationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfigurationTests.swift; sourceTree = "<group>"; };
+		19477D03984BA396E720A4F3 /* RouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterTests.swift; sourceTree = "<group>"; };
+		1A39E19F1E102E74D6EED775 /* TrustOverviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustOverviewViewModel.swift; sourceTree = "<group>"; };
+		1AFFE05EFF4786F3988D7074 /* HomeDashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDashboardViewModel.swift; sourceTree = "<group>"; };
 		2933E40AA1E6944DD496305E /* Typography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typography.swift; sourceTree = "<group>"; };
+		29A07930767A22C3AD21B532 /* MoneyViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyViewModelTests.swift; sourceTree = "<group>"; };
 		2D1FD8202E8D027C8A1691C2 /* MockDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDependencyContainer.swift; sourceTree = "<group>"; };
+		2D580DE59C014C03CC293BD5 /* AutomationBuilderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutomationBuilderViewModel.swift; sourceTree = "<group>"; };
 		30B3480AEF76A28286FD4B3C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		32F77F7D58A9EDDB44064593 /* TrustView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustView.swift; sourceTree = "<group>"; };
+		35D5E520DB50AAC1067D9E04 /* MoneyOverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyOverviewView.swift; sourceTree = "<group>"; };
+		39B9204B5795F4CC0ECC874A /* AutomationViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutomationViewModelTests.swift; sourceTree = "<group>"; };
+		3D662BA2C4AECE3EEC3A3B49 /* CopilotMockService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopilotMockService.swift; sourceTree = "<group>"; };
+		40D19BC4E496190844FC6BC3 /* CopilotViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopilotViewModelTests.swift; sourceTree = "<group>"; };
+		4179A93F8F4C166CCD458C90 /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
 		43979AB68ADF879D3ADEDCCC /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+		4CF341C025832599EE6E69B0 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		4D6089F276372195A7190B4A /* StandardSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardSheet.swift; sourceTree = "<group>"; };
 		5169EE5BCE182D7B1AFBC22B /* PilotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PilotTests.swift; sourceTree = "<group>"; };
 		578B975EF61A5B00135B75E1 /* PreviewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewContainer.swift; sourceTree = "<group>"; };
 		5E13B2B102B2558196BD9104 /* PilotCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PilotCard.swift; sourceTree = "<group>"; };
+		629E6FD6184F22E381D0781C /* AutomationSimulationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutomationSimulationView.swift; sourceTree = "<group>"; };
 		65605B81755170E90A1ECE03 /* PilotBottomBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PilotBottomBar.swift; sourceTree = "<group>"; };
+		69FD94C1AD2F3666FAB4807D /* ConversationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationViewModel.swift; sourceTree = "<group>"; };
+		6D7496F4F4AC1450E3DE8BE4 /* AutomationsOverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutomationsOverviewView.swift; sourceTree = "<group>"; };
+		6F00CB69EF1E0EE076441A76 /* TransactionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailView.swift; sourceTree = "<group>"; };
 		78DF31E6675E9D149702C0C1 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
 		81C7BDE5008D0AED2E548F09 /* Spacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spacing.swift; sourceTree = "<group>"; };
 		8AFB247120E4E8F06ABFDD64 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		8D7FBFF9F52B06E6665FE81F /* AnimationSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationSystem.swift; sourceTree = "<group>"; };
 		8F29153C141B5B13E7FC0197 /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
-		8F7991DF39147BE9B6AC3C75 /* NavigationTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTransition.swift; sourceTree = "<group>"; };
 		978B4DABC181E8A583BF4201 /* GlassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassView.swift; sourceTree = "<group>"; };
+		9899EA3C4DBE79C059CF9678 /* TrustDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustDetailView.swift; sourceTree = "<group>"; };
+		9A1E13A6CACE8BFE1B61BB64 /* TrustModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustModels.swift; sourceTree = "<group>"; };
 		9F2875AADFA1B523A166B95F /* PilotButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PilotButton.swift; sourceTree = "<group>"; };
+		9F312BAB015965A08B67D6F4 /* HomeMockService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMockService.swift; sourceTree = "<group>"; };
 		9F819FCDFDCDB1E7A35A31D5 /* DesignSystemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystemTests.swift; sourceTree = "<group>"; };
+		A3CFAED7F25BFCFE84D652F5 /* TrustOverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustOverviewView.swift; sourceTree = "<group>"; };
 		A69638DA27EA76C10C483DDC /* PilotTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = PilotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6D7101C5CE8245BA869E88E /* IdentityVerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentityVerificationView.swift; sourceTree = "<group>"; };
+		A763D5EC9A741857536614FD /* RootTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabView.swift; sourceTree = "<group>"; };
+		A7B02D9B808925F5BB40CD5C /* TrustScoreCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustScoreCard.swift; sourceTree = "<group>"; };
 		AB85CEC11BD665F9FF73BE7E /* Pilot.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Pilot.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADE2AC4977A948D91B87E4A7 /* RouteEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteEnums.swift; sourceTree = "<group>"; };
+		AEAD56A7CEDCEDCA6DEB18C5 /* MoneyMockService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyMockService.swift; sourceTree = "<group>"; };
+		B27A4C838C17128F5FAF1316 /* AutomationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutomationsView.swift; sourceTree = "<group>"; };
+		B68C8D04B1A583BE8C4A3E37 /* AccountDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailView.swift; sourceTree = "<group>"; };
 		B8BADD6DD41A2BD872FDCC47 /* PilotIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PilotIcon.swift; sourceTree = "<group>"; };
-		BC4974F55E6A3D5F0F121B9B /* NavigationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationCoordinator.swift; sourceTree = "<group>"; };
+		C4B5FA0DD1E637439421AA50 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		C5C54E073E34D5AE894343C4 /* AIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIView.swift; sourceTree = "<group>"; };
+		C6A0C590267FD31A317E53C0 /* AutomationModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutomationModels.swift; sourceTree = "<group>"; };
 		CFBE983CCDA722A187CF7D86 /* PilotApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PilotApp.swift; sourceTree = "<group>"; };
+		D46BCF20329F08F7EAD82AE7 /* WealthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WealthView.swift; sourceTree = "<group>"; };
 		E0BD96245E980B2C9A3601FF /* LoadingStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingStateView.swift; sourceTree = "<group>"; };
+		E15EBBAD816EFA25FF3E9B9E /* TrustMockService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustMockService.swift; sourceTree = "<group>"; };
+		E2D559ED5DEDA766F96EB355 /* CopilotUIComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopilotUIComponents.swift; sourceTree = "<group>"; };
 		EBF08E29AEF5FD61E248A802 /* ColorSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSystem.swift; sourceTree = "<group>"; };
 		EE7F35DFAF7CB17ED63D89AE /* PilotTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PilotTextField.swift; sourceTree = "<group>"; };
+		EF089907CD91235575E2A22D /* AutomationsOverviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutomationsOverviewViewModel.swift; sourceTree = "<group>"; };
+		EF3E13FAFDF79FAE00A85A5B /* AICopilotModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AICopilotModels.swift; sourceTree = "<group>"; };
+		F4E32C7A2699669F59B28F5B /* HomeWidgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWidgets.swift; sourceTree = "<group>"; };
+		F516E29E4D6507197651BE0D /* MoneyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyView.swift; sourceTree = "<group>"; };
+		F557405AE6AB348D28475BD6 /* AutomationServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutomationServices.swift; sourceTree = "<group>"; };
 		FA5D3C5BD514B7C15C0402B2 /* PilotListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PilotListRow.swift; sourceTree = "<group>"; };
+		FC4681609E2484072E182420 /* HomeModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModels.swift; sourceTree = "<group>"; };
 		FE74F822F3A24B801B5B79C7 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
+		0CD699289C9350E8C2EC8FF7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B68C8D04B1A583BE8C4A3E37 /* AccountDetailView.swift */,
+				35D5E520DB50AAC1067D9E04 /* MoneyOverviewView.swift */,
+				6F00CB69EF1E0EE076441A76 /* TransactionDetailView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		11E331C5536D6B0687CC4E61 /* Money */ = {
+			isa = PBXGroup;
+			children = (
+				F84B53FF976E3FBEFFEB5593 /* Models */,
+				E60EBCB2C9C72837273BB6E1 /* Services */,
+				D4BEEB9F3B27FE1A39BCE4A9 /* ViewModels */,
+				0CD699289C9350E8C2EC8FF7 /* Views */,
+			);
+			path = Money;
+			sourceTree = "<group>";
+		};
+		1C21978803CF87B59F3D256A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F557405AE6AB348D28475BD6 /* AutomationServices.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		294652EF0EAB036F2BAC4D5B /* Sources */ = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +210,8 @@
 				5B42FCD5DD9B315657F47A1E /* App */,
 				E4B2935834E08F48F8CC80AA /* Components */,
 				E577D80C011DF0D9697D857F /* DesignSystem */,
+				7957392332D9C26B772559DB /* Features */,
+				459EBAA9F0F1580D51BC4399 /* Navigation */,
 				8F9CDF430384964FA1DA7068 /* PreviewSupport */,
 				F1796B2D17310884284C8E8A /* Utilities */,
 			);
@@ -105,11 +222,43 @@
 			isa = PBXGroup;
 			children = (
 				19455E9B8C74AAC74625FCD8 /* AppConfigurationTests.swift */,
+				39B9204B5795F4CC0ECC874A /* AutomationViewModelTests.swift */,
+				40D19BC4E496190844FC6BC3 /* CopilotViewModelTests.swift */,
 				9F819FCDFDCDB1E7A35A31D5 /* DesignSystemTests.swift */,
+				4179A93F8F4C166CCD458C90 /* HomeViewModelTests.swift */,
+				29A07930767A22C3AD21B532 /* MoneyViewModelTests.swift */,
 				5169EE5BCE182D7B1AFBC22B /* PilotTests.swift */,
+				19477D03984BA396E720A4F3 /* RouterTests.swift */,
+				18B801B8434CC6674DBB78F0 /* TrustViewModelTests.swift */,
 			);
 			name = PilotTests;
 			path = Tests/PilotTests;
+			sourceTree = "<group>";
+		};
+		4309E94E625ECA6B216C680E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F4E32C7A2699669F59B28F5B /* HomeWidgets.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		459EBAA9F0F1580D51BC4399 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				C4B5FA0DD1E637439421AA50 /* AppCoordinator.swift */,
+				ADE2AC4977A948D91B87E4A7 /* RouteEnums.swift */,
+				4CF341C025832599EE6E69B0 /* Router.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		5688B1B83608833E346497EF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9A1E13A6CACE8BFE1B61BB64 /* TrustModels.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		5B42FCD5DD9B315657F47A1E /* App */ = {
@@ -118,8 +267,6 @@
 				8F29153C141B5B13E7FC0197 /* AppConfiguration.swift */,
 				FE74F822F3A24B801B5B79C7 /* AppState.swift */,
 				1320CBBA1158030090B1BE2F /* DependencyContainer.swift */,
-				BC4974F55E6A3D5F0F121B9B /* NavigationCoordinator.swift */,
-				8F7991DF39147BE9B6AC3C75 /* NavigationTransition.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -134,6 +281,64 @@
 			);
 			sourceTree = "<group>";
 		};
+		63ED1E8855FDADD9415F3091 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FC4681609E2484072E182420 /* HomeModels.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		69C601A0FDA51598D060C5A6 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				1AFFE05EFF4786F3988D7074 /* HomeDashboardViewModel.swift */,
+				63ED1E8855FDADD9415F3091 /* Models */,
+				EC965E17070FF533E026DCC8 /* Services */,
+				4309E94E625ECA6B216C680E /* Views */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		6CFCBC2C5E974C0BD5A98ACC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E2D559ED5DEDA766F96EB355 /* CopilotUIComponents.swift */,
+				0EB161D7B0EDE253DB3C73DC /* CopilotView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7957392332D9C26B772559DB /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				C5C54E073E34D5AE894343C4 /* AIView.swift */,
+				B27A4C838C17128F5FAF1316 /* AutomationsView.swift */,
+				10227ADEFF811FD9821D273A /* HomeView.swift */,
+				F516E29E4D6507197651BE0D /* MoneyView.swift */,
+				A763D5EC9A741857536614FD /* RootTabView.swift */,
+				32F77F7D58A9EDDB44064593 /* TrustView.swift */,
+				D46BCF20329F08F7EAD82AE7 /* WealthView.swift */,
+				8D4ABF70BC3DA0131B588303 /* AICopilot */,
+				E78B4D1FA757E925232248B5 /* Automations */,
+				69C601A0FDA51598D060C5A6 /* Home */,
+				11E331C5536D6B0687CC4E61 /* Money */,
+				E16214718C96F50D44D8018B /* Trust */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		8D4ABF70BC3DA0131B588303 /* AICopilot */ = {
+			isa = PBXGroup;
+			children = (
+				69FD94C1AD2F3666FAB4807D /* ConversationViewModel.swift */,
+				F6363061CC4F426EE827737F /* Models */,
+				C2413706F1250B8CC7D222DE /* Services */,
+				6CFCBC2C5E974C0BD5A98ACC /* Views */,
+			);
+			path = AICopilot;
+			sourceTree = "<group>";
+		};
 		8F9CDF430384964FA1DA7068 /* PreviewSupport */ = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +348,50 @@
 			path = PreviewSupport;
 			sourceTree = "<group>";
 		};
+		BF2BA6B194C8178221DDC786 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C6A0C590267FD31A317E53C0 /* AutomationModels.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C2413706F1250B8CC7D222DE /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				3D662BA2C4AECE3EEC3A3B49 /* CopilotMockService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		C908A6021D22C3F1438F5355 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A6D7101C5CE8245BA869E88E /* IdentityVerificationView.swift */,
+				9899EA3C4DBE79C059CF9678 /* TrustDetailView.swift */,
+				A3CFAED7F25BFCFE84D652F5 /* TrustOverviewView.swift */,
+				A7B02D9B808925F5BB40CD5C /* TrustScoreCard.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D4BEEB9F3B27FE1A39BCE4A9 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				0D27D54C83211B4B4442C843 /* MoneyViewModels.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		D596DBA1B7EF70696B127634 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				2D580DE59C014C03CC293BD5 /* AutomationBuilderViewModel.swift */,
+				EF089907CD91235575E2A22D /* AutomationsOverviewViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		DC7D82CC69762577B57556DA /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +399,27 @@
 				A69638DA27EA76C10C483DDC /* PilotTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		E0D699B9A088005DF5EF6B99 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				190AA7D21314A437EF488601 /* AutomationBuilderView.swift */,
+				629E6FD6184F22E381D0781C /* AutomationSimulationView.swift */,
+				6D7496F4F4AC1450E3DE8BE4 /* AutomationsOverviewView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E16214718C96F50D44D8018B /* Trust */ = {
+			isa = PBXGroup;
+			children = (
+				5688B1B83608833E346497EF /* Models */,
+				E5A31C071657005D3AA4D2D1 /* Services */,
+				F417B696D9C7F0778F4D9F45 /* ViewModels */,
+				C908A6021D22C3F1438F5355 /* Views */,
+			);
+			path = Trust;
 			sourceTree = "<group>";
 		};
 		E4B2935834E08F48F8CC80AA /* Components */ = {
@@ -182,6 +452,41 @@
 			path = DesignSystem;
 			sourceTree = "<group>";
 		};
+		E5A31C071657005D3AA4D2D1 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				E15EBBAD816EFA25FF3E9B9E /* TrustMockService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		E60EBCB2C9C72837273BB6E1 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				AEAD56A7CEDCEDCA6DEB18C5 /* MoneyMockService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		E78B4D1FA757E925232248B5 /* Automations */ = {
+			isa = PBXGroup;
+			children = (
+				BF2BA6B194C8178221DDC786 /* Models */,
+				1C21978803CF87B59F3D256A /* Services */,
+				D596DBA1B7EF70696B127634 /* ViewModels */,
+				E0D699B9A088005DF5EF6B99 /* Views */,
+			);
+			path = Automations;
+			sourceTree = "<group>";
+		};
+		EC965E17070FF533E026DCC8 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				9F312BAB015965A08B67D6F4 /* HomeMockService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		F1796B2D17310884284C8E8A /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -189,6 +494,30 @@
 				8AFB247120E4E8F06ABFDD64 /* Logger.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		F417B696D9C7F0778F4D9F45 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				1A39E19F1E102E74D6EED775 /* TrustOverviewViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		F6363061CC4F426EE827737F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EF3E13FAFDF79FAE00A85A5B /* AICopilotModels.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F84B53FF976E3FBEFFEB5593 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				09066321EE19FD8D430D9BD1 /* MoneyModels.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,20 +607,45 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96659B9929A9784291995713 /* AICopilotModels.swift in Sources */,
+				01F66C71641E9EA559178AFE /* AIView.swift in Sources */,
+				8F04316788B1FCD1EB7C6005 /* AccountDetailView.swift in Sources */,
 				111781EF05243BE8086DCEB0 /* AnimationSystem.swift in Sources */,
 				655A91C34D9FBA0A30627394 /* AppConfiguration.swift in Sources */,
+				13A401821709BB5CCDD59D4D /* AppCoordinator.swift in Sources */,
 				F308E2DEC3B2C05FF717582F /* AppError.swift in Sources */,
 				477BF6C1260996FF3F7E1A90 /* AppState.swift in Sources */,
+				52E4663D04236C71A459D2F6 /* AutomationBuilderView.swift in Sources */,
+				27E21F5ED508B1E029BFB0E7 /* AutomationBuilderViewModel.swift in Sources */,
+				BCC0945EDF819DF9EBF39F0C /* AutomationModels.swift in Sources */,
+				BFF36C5F38E177499538D9B8 /* AutomationServices.swift in Sources */,
+				510FEF4F1F611F744C8DAA8D /* AutomationSimulationView.swift in Sources */,
+				232CA599D58D0481275FB115 /* AutomationsOverviewView.swift in Sources */,
+				32CF25538A05955782168B64 /* AutomationsOverviewViewModel.swift in Sources */,
+				F139F78301CABC384BB9A6FC /* AutomationsView.swift in Sources */,
 				D71303A555E016FC5948F58F /* ColorSystem.swift in Sources */,
+				B95EAE85D0952C669793111A /* ConversationViewModel.swift in Sources */,
+				FA72BBC538195A5563C8369D /* CopilotMockService.swift in Sources */,
+				FA5400FD80A9F2E4354B21A8 /* CopilotUIComponents.swift in Sources */,
+				8105E56A7D4C9C52CFF9A306 /* CopilotView.swift in Sources */,
 				E1C0DC51F5FA0133BDE56D62 /* DependencyContainer.swift in Sources */,
 				B07F6A3BF5F055A8132AE310 /* EmptyStateView.swift in Sources */,
 				801E85C58133F151BBBD2444 /* GlassView.swift in Sources */,
 				20CAED6E48DA6F71A580EA11 /* HapticsManager.swift in Sources */,
+				63A73444C277C2D348876658 /* HomeDashboardViewModel.swift in Sources */,
+				9C3EC38C30C0CD022CB9BDE9 /* HomeMockService.swift in Sources */,
+				D981DE12E51D8E78A92BA597 /* HomeModels.swift in Sources */,
+				EC8B3D88B15B0ECDA50CDE70 /* HomeView.swift in Sources */,
+				E6E1C82664B44EDC243E9DF6 /* HomeWidgets.swift in Sources */,
+				D0DD82D99C531A8DE4488716 /* IdentityVerificationView.swift in Sources */,
 				1A6B54ADC9BD24224CD1F1C1 /* LoadingStateView.swift in Sources */,
 				868FDC8471174171FC1AAEE5 /* Logger.swift in Sources */,
 				73DAF54920DA4C2720F6FA71 /* MockDependencyContainer.swift in Sources */,
-				1CABD1CD79AB11102C5BC345 /* NavigationCoordinator.swift in Sources */,
-				C11ECABD02E75D7DC7EE077C /* NavigationTransition.swift in Sources */,
+				8842683E99D2222EC418C8E7 /* MoneyMockService.swift in Sources */,
+				1C30F03252C26E1DD72625AB /* MoneyModels.swift in Sources */,
+				E3B28732C45AF90EB94E4E53 /* MoneyOverviewView.swift in Sources */,
+				65C5BED0C8883A3E6016548D /* MoneyView.swift in Sources */,
+				D9EAABB43103D072B198FA1C /* MoneyViewModels.swift in Sources */,
 				ED3131D8C43CB59A0DEEE91C /* PilotApp.swift in Sources */,
 				2404B34EB0B03068172FAA04 /* PilotBottomBar.swift in Sources */,
 				E35225C5358A35C4F04720AA /* PilotButton.swift in Sources */,
@@ -300,10 +654,22 @@
 				AB22E6C28DD609B63697FCAE /* PilotListRow.swift in Sources */,
 				8624FF2DFDEC8D28EB3CDD8E /* PilotTextField.swift in Sources */,
 				C96A6B5EED33BF08B7F633B7 /* PreviewContainer.swift in Sources */,
+				C6F7F0A6DF4E6D002107CB26 /* RootTabView.swift in Sources */,
+				D33F0059FADF665A52BA9020 /* RouteEnums.swift in Sources */,
+				422EC34A100D1F59F0C23D78 /* Router.swift in Sources */,
 				1D41EE8C541E4E8270F43A53 /* Spacing.swift in Sources */,
 				42EB286F5F504A40A801A5EB /* StandardSheet.swift in Sources */,
 				C4756A63F273ED67C02B5ECE /* ThemeManager.swift in Sources */,
+				AEB2A6C1895F6F02578EFFAF /* TransactionDetailView.swift in Sources */,
+				E9E204E6343D0363DDC88949 /* TrustDetailView.swift in Sources */,
+				660476A2033DB3DCD7B95E18 /* TrustMockService.swift in Sources */,
+				F38333DF1036B02041010A22 /* TrustModels.swift in Sources */,
+				F2D0929F9422788B0B680A61 /* TrustOverviewView.swift in Sources */,
+				E517570BD2BD46AC36F09BD1 /* TrustOverviewViewModel.swift in Sources */,
+				80EA84733F73DF3184E9C66B /* TrustScoreCard.swift in Sources */,
+				B0DD9C249E5E94792CA96302 /* TrustView.swift in Sources */,
 				88810089A97BCB5841F60612 /* Typography.swift in Sources */,
+				ADCF43953EA2F22A025A7F89 /* WealthView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,8 +678,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				49988DD938F38BD4A5FB53F1 /* AppConfigurationTests.swift in Sources */,
+				BCB645FCEE95741991729EF1 /* AutomationViewModelTests.swift in Sources */,
+				70BE27D4B2F560FF559515AE /* CopilotViewModelTests.swift in Sources */,
 				662A8B0CF08F5D85BB71266E /* DesignSystemTests.swift in Sources */,
+				7FA15DA1BDBCE1D0A7D5867E /* HomeViewModelTests.swift in Sources */,
+				2325E63CB564B4C635B7ED2F /* MoneyViewModelTests.swift in Sources */,
 				9778D75A4D000C2405F0F53E /* PilotTests.swift in Sources */,
+				1E527FF7DE9977D8A9F3610A /* RouterTests.swift in Sources */,
+				6C9E10EAEC327F8FED8C338B /* TrustViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
