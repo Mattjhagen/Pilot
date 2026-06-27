@@ -26,6 +26,7 @@ The landing page adheres strictly to the Pilot Design Language (PDL), utilizing:
 - The "Watch Demo" button triggers an alert indicating it is coming soon.
 
 ### Interactive Pilot Simulator
+- **Reference:** For a detailed breakdown of the simulator's purpose, states, and narrative, see [Interactive Simulator Experience](experiences/Interactive-Simulator-Experience.md).
 - **Location:** Added after the "Meet your AI CFO" narrative section.
 - **Dual-Mode Experience:** 
   - **Guided Tour:** Runs a cinematic 36-second JS storyboard simulating the AI CFO in action (Morning Briefing -> Insight -> Automation -> Trust Boost -> Lending -> Daily Brief -> Final Cinematic).

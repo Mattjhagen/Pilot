@@ -30,6 +30,11 @@ For detailed architectural breakdowns, see:
 - [Integrations](docs/architecture/Integrations.md)
 - [Lending](docs/architecture/Lending.md)
 
+## Experiences
+
+The behavioral north star for the real iOS AI Command Center is documented and actively simulated on the web landing page.
+- [Interactive Simulator Experience](docs/experiences/Interactive-Simulator-Experience.md)
+
 ## Building the Project
 
 We use `xcodegen` to maintain a clean project structure.
