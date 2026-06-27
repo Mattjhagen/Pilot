@@ -123,7 +123,7 @@ struct HomeTrustScoreCard: View {
                     Text("Trust Score")
                         .pilotTypography(.pilotHeadline)
                     Spacer()
-                    PilotIcon(name: "shield.check.fill")
+                    PilotIcon(name: "checkmark.shield.fill")
                         .foregroundColor(.pilotSuccess)
                 }
                 
