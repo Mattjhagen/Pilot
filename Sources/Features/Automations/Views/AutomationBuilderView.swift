@@ -107,7 +107,7 @@ struct AutomationBuilderView: View {
                         .pilotTypography(.pilotBody)
                     Spacer()
                     Button(action: {
-                        withAnimation { viewModel.triggers.remove(at: index) }
+                        _ = withAnimation { viewModel.triggers.remove(at: index) }
                     }) {
                         PilotIcon(name: "minus.circle.fill")
                             .foregroundColor(.pilotError)
@@ -144,7 +144,7 @@ struct AutomationBuilderView: View {
                         .pilotTypography(.pilotBody)
                     Spacer()
                     Button(action: {
-                        withAnimation { viewModel.actions.remove(at: index) }
+                        _ = withAnimation { viewModel.actions.remove(at: index) }
                     }) {
                         PilotIcon(name: "minus.circle.fill")
                             .foregroundColor(.pilotError)

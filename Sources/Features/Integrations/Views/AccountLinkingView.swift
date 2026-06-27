@@ -39,7 +39,7 @@ struct AccountLinkingView: View {
                                     
                                     PilotIcon(name: viewModel.selectedAccountIds.contains(account.id) ? "checkmark.circle.fill" : "circle")
                                         .foregroundColor(viewModel.selectedAccountIds.contains(account.id) ? .pilotAccent : .pilotSecondaryText)
-                                        .padding(.left, Spacing.sm)
+                                        .padding(.leading, Spacing.sm)
                                 }
                             }
                         }

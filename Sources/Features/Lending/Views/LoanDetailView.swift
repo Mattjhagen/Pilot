@@ -68,10 +68,12 @@ struct LoanDetailView: View {
                             }
                         }
                     }) {
-                        if viewModel.isPaying {
-                            ProgressView().tint(.white)
-                        } else {
-                            Text(viewModel.loan.nextPaymentAmount != nil ? "Make Payment" : (viewModel.loan.outstandingBalance > 0 ? "Payoff Balance" : "Done"))
+                        Group {
+                            if viewModel.isPaying {
+                                ProgressView().tint(.white)
+                            } else {
+                                Text(viewModel.loan.nextPaymentAmount != nil ? "Make Payment" : (viewModel.loan.outstandingBalance > 0 ? "Payoff Balance" : "Done"))
+                            }
                         }
                         .frame(maxWidth: .infinity)
                     }

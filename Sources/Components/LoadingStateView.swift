@@ -4,7 +4,7 @@ struct LoadingStateView: View {
     var message: String = "Loading..."
     
     var body: some View {
-        VStack(spacing: Spacing.medium) {
+        VStack(spacing: Spacing.md) {
             ProgressView()
                 .controlSize(.large)
             Text(message)

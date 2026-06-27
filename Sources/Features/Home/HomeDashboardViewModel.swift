@@ -9,7 +9,7 @@ final class HomeDashboardViewModel {
     var availableMoney: AvailableMoney?
     var upcomingBills: [UpcomingBill] = []
     var recentTransactions: [RecentTransaction] = []
-    var trustScore: TrustScore?
+    var trustScore: HomeTrustScore?
     var savingsProgress: [SavingsProgress] = []
     var creditUtilization: CreditUtilization?
     var subscriptions: [Subscription] = []

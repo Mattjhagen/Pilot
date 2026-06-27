@@ -108,7 +108,7 @@ struct HomeView: View {
         
         UpcomingBillsCard(bills: viewModel.upcomingBills)
         
-        TrustScoreCard(score: viewModel.trustScore)
+        HomeTrustScoreCard(score: viewModel.trustScore)
             .onTapGesture { router.push(.dashboard) }
         
         RecentSpendingCard(transactions: viewModel.recentTransactions)

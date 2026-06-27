@@ -22,7 +22,7 @@ struct RecentTransaction: Identifiable {
     let isIncome: Bool
 }
 
-struct TrustScore: Identifiable {
+struct HomeTrustScore: Identifiable {
     let id = UUID()
     let score: Int
     let maxScore: Int

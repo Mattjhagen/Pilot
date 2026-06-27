@@ -22,12 +22,12 @@ struct EmptyStateView: View {
     }
     
     var body: some View {
-        VStack(spacing: Spacing.large) {
+        VStack(spacing: Spacing.lg) {
             Image(systemName: systemImage)
                 .font(.system(size: 48, weight: .light))
                 .foregroundColor(.pilotSecondaryText)
             
-            VStack(spacing: Spacing.small) {
+            VStack(spacing: Spacing.sm) {
                 Text(title)
                     .font(.pilotHeadline)
                     .foregroundColor(.pilotPrimaryText)
@@ -43,11 +43,11 @@ struct EmptyStateView: View {
                 Button(action: action) {
                     Text(actionTitle)
                 }
-                .pilotButtonStyle(isPrimary: false)
-                .padding(.horizontal, Spacing.giant)
+                .pilotButtonStyle(variant: .secondary)
+                .padding(.horizontal, Spacing.xl)
             }
         }
-        .padding(Spacing.extraLarge)
+        .padding(Spacing.xl)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.pilotBackground.ignoresSafeArea())
     }

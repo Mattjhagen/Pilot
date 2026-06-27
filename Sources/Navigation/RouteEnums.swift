@@ -41,6 +41,7 @@ enum HomeRoute: Hashable {
 
 enum MoneyRoute: Hashable {
     case dashboard
+    case accountDetail(id: UUID)
     case transactionDetail(id: UUID)
 }
 
@@ -52,6 +53,8 @@ enum WealthRoute: Hashable {
 enum TrustRoute: Hashable {
     case dashboard
     case scoreHistory
+    case metricDetail(id: UUID)
+    case identityVerification
 }
 
 enum AIRoute: Hashable {
@@ -61,7 +64,9 @@ enum AIRoute: Hashable {
 
 enum AutomationsRoute: Hashable {
     case dashboard
-    case editAutomation(id: UUID)
+    case detail(id: UUID)
+    case builder
+    case simulation(id: UUID)
 }
 
 // MARK: - Global Modal Sheets

@@ -113,25 +113,31 @@ struct RecentSpendingCard: View {
     }
 }
 
-struct TrustScoreCard: View {
-    let score: TrustScore?
+struct HomeTrustScoreCard: View {
+    let score: HomeTrustScore?
     
     var body: some View {
         PilotCard {
-            VStack(alignment: .leading, spacing: Spacing.xs) {
-                Text("Trust Score")
-                    .pilotTypography(.pilotCaption, color: .pilotSecondaryText)
+            VStack(alignment: .leading, spacing: Spacing.sm) {
+                HStack {
+                    Text("Trust Score")
+                        .pilotTypography(.pilotHeadline)
+                    Spacer()
+                    PilotIcon(name: "shield.check.fill")
+                        .foregroundColor(.pilotSuccess)
+                }
                 
                 if let score = score {
-                    HStack(alignment: .lastTextBaseline) {
+                    HStack(alignment: .firstTextBaseline) {
                         Text("\(score.score)")
-                            .pilotTypography(.pilotTitle)
-                            .foregroundColor(.pilotSuccess)
+                            .font(.system(size: 40, weight: .bold, design: .rounded))
+                            .foregroundColor(.pilotPrimaryText)
                         Text("/ \(score.maxScore)")
                             .pilotTypography(.pilotCaption, color: .pilotSecondaryText)
                     }
+                    
                     Text(score.category)
-                        .pilotTypography(.pilotFootnote, color: .pilotSuccess)
+                        .pilotTypography(.pilotBody, color: .pilotSuccess)
                 } else {
                     ProgressView()
                 }

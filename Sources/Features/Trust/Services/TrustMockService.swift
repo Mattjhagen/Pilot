@@ -1,11 +1,16 @@
 import Foundation
 
 protocol TrustService {
+    func fetchScore() async throws -> TrustScore
     func fetchMetrics() async throws -> [TrustMetric]
     func fetchSuggestions() async throws -> [TrustSuggestion]
 }
 
 final class TrustMockService: TrustService {
+    
+    func fetchScore() async throws -> TrustScore {
+        return TrustScore(score: 812, maxScore: 850, grade: "Excellent", trend: 5, lastUpdated: Date())
+    }
     
     func fetchMetrics() async throws -> [TrustMetric] {
         try await Task.sleep(nanoseconds: 500_000_000)

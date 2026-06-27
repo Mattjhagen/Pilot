@@ -174,7 +174,7 @@
 		A6D7101C5CE8245BA869E88E /* IdentityVerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentityVerificationView.swift; sourceTree = "<group>"; };
 		A763D5EC9A741857536614FD /* RootTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabView.swift; sourceTree = "<group>"; };
 		A7B02D9B808925F5BB40CD5C /* TrustScoreCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustScoreCard.swift; sourceTree = "<group>"; };
-		AB85CEC11BD665F9FF73BE7E /* Pilot.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Pilot.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB85CEC11BD665F9FF73BE7E /* Pilot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pilot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACBF94B04AB81C5D657597B7 /* IntegrationsViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegrationsViewModels.swift; sourceTree = "<group>"; };
 		ADE2AC4977A948D91B87E4A7 /* RouteEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteEnums.swift; sourceTree = "<group>"; };
 		AEAD56A7CEDCEDCA6DEB18C5 /* MoneyMockService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyMockService.swift; sourceTree = "<group>"; };
@@ -701,8 +701,6 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1430;
-				TargetAttributes = {
-				};
 			};
 			buildConfigurationList = 79B4DC32867D528FEEA13573 /* Build configuration list for PBXProject "Pilot" */;
 			developmentRegion = en;
@@ -952,6 +950,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = WZMXKCK98R;
 				INFOPLIST_FILE = Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1024,6 +1023,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = WZMXKCK98R;
 				INFOPLIST_FILE = Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

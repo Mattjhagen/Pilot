@@ -58,6 +58,8 @@ struct MoneyOverviewView: View {
         }
         .navigationDestination(for: MoneyRoute.self) { route in
             switch route {
+            case .dashboard:
+                EmptyView()
             case .accountDetail(let id):
                 // We'll map the ID back to the account.
                 // In a real app we'd pass the account or fetch it by ID in the detail view.

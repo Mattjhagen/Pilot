@@ -26,7 +26,7 @@ final class MoneyMockService: MoneyService {
         // Generate mock transactions
         for i in 0..<20 {
             let isIncome = i % 7 == 0
-            let amount = isIncome ? Double.random(in: 100...2000) : Double.random(in: -200...-5)
+            let amount = isIncome ? Double.random(in: 100...2000) : Double.random(in: -200 ... -5)
             let date = calendar.date(byAdding: .day, value: -i, to: Date())!
             let category: TransactionCategory = isIncome ? .income : [.groceries, .dining, .transportation, .entertainment, .general].randomElement()!
             let status: TransactionStatus = i < 2 ? .pending : .posted

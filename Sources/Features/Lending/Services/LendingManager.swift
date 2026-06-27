@@ -33,7 +33,7 @@ final class LendingManager {
     func fetchOffers() async {
         do {
             let score = try await trustService.fetchScore()
-            availableOffers = try await lendingService.prequalifyLoans(trustScore: score.currentScore)
+            availableOffers = try await lendingService.prequalifyLoans(trustScore: score.score)
         } catch {
             print("Failed to fetch offers: \(error)")
             availableOffers = []
@@ -43,20 +43,22 @@ final class LendingManager {
     @MainActor
     func apply(for offer: LoanOffer) async throws {
         let score = try await trustService.fetchScore()
-        let agreement = try await lendingService.apply(for: offer, trustScore: score.currentScore)
+        let agreement = try await lendingService.apply(for: offer, trustScore: score.score)
         activeLoans.append(agreement)
         
         // Mock disbursement: create a transaction on checking account
         // Assuming the first account returned by moneyService is checking
         if let checking = try? await moneyService.fetchAccounts().first(where: { $0.type == .checking }) {
-            let disbursementTx = Transaction(
+            let _ = Transaction(
                 id: UUID(),
+                accountId: checking.id,
                 date: Date(),
-                amount: offer.principal,
-                merchant: "Pilot Lending",
                 description: "Loan Disbursement",
-                category: "Transfer",
-                isPending: false
+                amount: offer.principal,
+                category: .income,
+                status: .posted,
+                merchant: "Pilot Lending",
+                notes: nil
             )
             // Note: Since MoneyMockService returns static arrays, this would require 
             // the money service to be mutable to show up. 
@@ -78,14 +80,16 @@ final class LendingManager {
         
         // Update trust score by +5 for good behavior
         do {
-            var current = try await trustService.fetchScore()
+            let current = try await trustService.fetchScore()
             // Quick mock update
-            current = TrustScore(
-                currentScore: min(1000, current.currentScore + 5),
-                lastUpdated: Date(),
-                trend: .up
+            let newScore = TrustScore(
+                score: min(1000, current.score + 5),
+                maxScore: current.maxScore,
+                grade: current.grade,
+                trend: 1,
+                lastUpdated: Date()
             )
-            print("Trust score improved to \(current.currentScore)")
+            print("Trust score improved to \(newScore.score)")
         } catch {}
     }
 }

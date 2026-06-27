@@ -4,7 +4,7 @@ protocol HomeService {
     func fetchAvailableMoney() async throws -> AvailableMoney
     func fetchUpcomingBills() async throws -> [UpcomingBill]
     func fetchRecentTransactions() async throws -> [RecentTransaction]
-    func fetchTrustScore() async throws -> TrustScore
+    func fetchTrustScore() async throws -> HomeTrustScore
     func fetchSavingsProgress() async throws -> [SavingsProgress]
     func fetchCreditUtilization() async throws -> CreditUtilization
     func fetchSubscriptions() async throws -> [Subscription]
@@ -37,9 +37,9 @@ final class HomeMockService: HomeService {
         ]
     }
     
-    func fetchTrustScore() async throws -> TrustScore {
+    func fetchTrustScore() async throws -> HomeTrustScore {
         try await Task.sleep(nanoseconds: 100_000_000)
-        return TrustScore(score: 812, maxScore: 850, category: "Excellent")
+        return HomeTrustScore(score: 812, maxScore: 850, category: "Excellent")
     }
     
     func fetchSavingsProgress() async throws -> [SavingsProgress] {

@@ -55,6 +55,8 @@ struct AutomationsOverviewView: View {
         }
         .navigationDestination(for: AutomationsRoute.self) { route in
             switch route {
+            case .dashboard:
+                EmptyView()
             case .builder:
                 AutomationBuilderView()
             case .detail(let id):

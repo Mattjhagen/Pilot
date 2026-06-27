@@ -25,5 +25,7 @@
 	</dict>
 	<key>UILaunchScreen</key>
 	<dict/>
+	<key>UIRequiresFullScreen</key>
+	<true/>
 </dict>
 </plist>

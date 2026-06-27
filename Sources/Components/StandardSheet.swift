@@ -14,11 +14,11 @@ struct StandardSheet<Content: View>: View {
             ZStack {
                 Color.pilotBackground.ignoresSafeArea()
                 
-                VStack(spacing: Spacing.medium) {
+                VStack(spacing: Spacing.md) {
                     content()
                     Spacer()
                 }
-                .padding(Spacing.large)
+                .padding(Spacing.lg)
             }
             .navigationTitle(title)
             .navigationBarTitleDisplayMode(.inline)

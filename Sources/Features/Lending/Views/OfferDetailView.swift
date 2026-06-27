@@ -166,12 +166,14 @@ struct ApplicationFormView: View {
                     HapticsManager.shared.lightImpact()
                     Task { await viewModel.submitApplication() }
                 }) {
+                Group {
                     if viewModel.isSubmitting {
                         ProgressView().tint(.white)
                     } else {
                         Text("Sign & Submit")
                     }
-                    .frame(maxWidth: .infinity)
+                }
+                .frame(maxWidth: .infinity)
                 }
                 .pilotButtonStyle(variant: .primary)
                 .disabled(!agreedToTerms || viewModel.isSubmitting)

@@ -40,6 +40,9 @@ struct TrustOverviewView: View {
         }
         .navigationDestination(for: TrustRoute.self) { route in
             switch route {
+            case .dashboard, .scoreHistory:
+                // No op, or handle accordingly if there are dedicated views
+                Text("Placeholder")
             case .metricDetail(let metricId):
                 if let metric = viewModel.metrics.first(where: { $0.id == metricId }) {
                     TrustDetailView(metric: metric)
