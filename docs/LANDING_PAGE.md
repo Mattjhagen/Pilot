@@ -25,6 +25,13 @@ The landing page adheres strictly to the Pilot Design Language (PDL), utilizing:
 - The "Join Early Access" CTA is currently wired to a `mailto:` link (`earlyaccess@pilotfinance.space`) while the product is in prototype review.
 - The "Watch Demo" button triggers an alert indicating it is coming soon.
 
+### Interactive Demo Phone
+- **Location:** Added after the "Meet your AI CFO" narrative section.
+- **Screens:** Cycles continuously through Command Center, Money, Trust Score, Automations, and Lending screens.
+- **Tech:** Uses pure HTML/CSS representations of Pilot app screens for speed and lightweight maintenance. No image assets are required.
+- **Customization:** To add or modify screens, edit the HTML inside `.iphone-screen` and update the matching tab bar icons. The javascript will automatically detect and cycle through all elements containing the `.app-screen` class.
+- **Reduced Motion:** If `prefers-reduced-motion` is enabled, the Javascript specifically halts the automatic 3.5s cycle loop and CSS transitions are disabled, keeping the user on a static initial frame.
+
 ## What Needs to be Replaced Before Public Launch
 - Replace the `mailto:` CTA with an actual waitlist/backend integration (e.g., Mailchimp, custom API).
 - Replace the placeholder "Watch Demo" alert with a real video modal or external link.
