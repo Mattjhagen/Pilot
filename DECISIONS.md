@@ -403,34 +403,38 @@ Accepted
 
 Decision
 
-Manage Design System semantic colors and theme tokens via dynamic code extensions rather than `.xcassets` catalogs, and avoid third-party snapshot testing libraries.
+Establish a baseline semantic color palette using dynamic code extensions (instead of `.xcassets`) and avoid third-party snapshot testing frameworks (e.g., `swift-snapshot-testing`), relying instead on SwiftUI Previews and XCTest.
 
 Context
 
-We need comprehensive light/dark mode support and robust snapshot testing for the design system. However, heavy reliance on `.xcassets` catalogs often causes merge conflicts in large teams, and third-party snapshot testing libraries violate our goal of avoiding external dependencies unless strictly necessary.
+We needed comprehensive light/dark mode support and robust UI testing for the design system. However, heavy reliance on `.xcassets` catalogs often causes merge conflicts in large teams. Additionally, while snapshot testing frameworks are valuable for catching pixel-by-pixel regressions, introducing third-party dependencies violates our `AGENTS.md` engineering constitution which emphasizes minimizing external dependencies.
 
 Alternatives Considered
 
 • Store all colors in `Assets.xcassets`.
 • Use `swift-snapshot-testing` for visual regression tests.
-• Use SwiftUI Environment objects exclusively for theming.
 
 Decision
 
-1. **Tokens**: Colors are defined in `ColorSystem.swift` using `UIColor` trait collection closures. This gives us full programmatic control over dynamic light/dark mode resolution while keeping git history readable.
-2. **Testing**: Instead of third-party snapshot libraries, we will rely on rigorous SwiftUI Previews with multiple traits (Dark Mode, Dynamic Type sizes) embedded directly alongside the components.
-3. **Typography/Spacing**: Managed via static extensions on `Font` and custom `Spacing` structs to maintain a completely native, lightweight footprint.
+1. **Tokens**: Colors are defined in `ColorSystem.swift` using `UIColor` trait collection closures or hex initialization. We established the following baseline Apple-native, premium semantic palette:
+   - **Surface**: Dark mode `#0D0D0D` (deep charcoal), Light mode `#F7F7F7` (very light gray).
+   - **Accent**: `#007AFF` (Apple's vibrant blue).
+   - **Success**: `#34C759` (rich green).
+   - **Warning**: `#FFD60A` (warm yellow).
+   - **Error**: `#FF3B30` (Apple red).
+   - **Neutral**: `#8E8E93` (medium gray).
+2. **Testing**: We will rely on rigorous SwiftUI Previews with multiple traits (Dark Mode, Dynamic Type sizes) embedded directly alongside the components and XCTest for logic validation. We will re-evaluate automated visual snapshot testing in later phases once the design stabilizes.
 
 Consequences
 
 Positive
-• Zero external dependencies.
+• Zero external dependencies, fully adhering to `AGENTS.md`.
 • Highly readable code changes in PRs compared to JSON asset files.
-• Faster build times.
+• Clear, semantic mapping for UI state.
 
 Tradeoffs
 • We lose the visual color preview afforded by `.xcassets` in Xcode's interface.
-• Visual regressions must be caught manually via Previews rather than automated image comparison (until Apple provides a native snapshot tool).⸻
+• Visual regressions must be caught manually via Previews rather than automated image comparison.⸻
 
 ADR-005
 

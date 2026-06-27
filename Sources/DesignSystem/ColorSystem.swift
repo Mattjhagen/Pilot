@@ -5,11 +5,11 @@ extension Color {
     
     // Background & Surface
     static let pilotBackground = Color(UIColor { trait in
-        trait.userInterfaceStyle == .dark ? UIColor(white: 0.05, alpha: 1.0) : UIColor(white: 0.98, alpha: 1.0)
+        trait.userInterfaceStyle == .dark ? UIColor(hex: "#000000") : UIColor(hex: "#FFFFFF") // Assuming pure black/white for root backgrounds
     })
     
     static let pilotSurface = Color(UIColor { trait in
-        trait.userInterfaceStyle == .dark ? UIColor(white: 0.12, alpha: 1.0) : UIColor.white
+        trait.userInterfaceStyle == .dark ? UIColor(hex: "#0D0D0D") : UIColor(hex: "#F7F7F7")
     })
     
     // Text Colors
@@ -18,19 +18,24 @@ extension Color {
     static let pilotTertiaryText = Color(UIColor.tertiaryLabel)
     
     // Accents & State
-    static let pilotAccent = Color(UIColor { trait in
-        trait.userInterfaceStyle == .dark ? UIColor(red: 0.2, green: 0.6, blue: 1.0, alpha: 1.0) : UIColor(red: 0.0, green: 0.4, blue: 0.9, alpha: 1.0)
-    })
-    
-    static let pilotSuccess = Color(UIColor { trait in
-        trait.userInterfaceStyle == .dark ? UIColor(red: 0.2, green: 0.8, blue: 0.4, alpha: 1.0) : UIColor(red: 0.1, green: 0.6, blue: 0.2, alpha: 1.0)
-    })
-    
-    static let pilotWarning = Color(UIColor { trait in
-        trait.userInterfaceStyle == .dark ? UIColor(red: 1.0, green: 0.8, blue: 0.2, alpha: 1.0) : UIColor(red: 0.9, green: 0.6, blue: 0.0, alpha: 1.0)
-    })
-    
-    static let pilotError = Color(UIColor { trait in
-        trait.userInterfaceStyle == .dark ? UIColor(red: 1.0, green: 0.3, blue: 0.3, alpha: 1.0) : UIColor(red: 0.9, green: 0.1, blue: 0.1, alpha: 1.0)
-    })
+    static let pilotAccent = Color(UIColor(hex: "#007AFF"))
+    static let pilotSuccess = Color(UIColor(hex: "#34C759"))
+    static let pilotWarning = Color(UIColor(hex: "#FFD60A"))
+    static let pilotError = Color(UIColor(hex: "#FF3B30"))
+    static let pilotNeutral = Color(UIColor(hex: "#8E8E93"))
+}
+
+fileprivate extension UIColor {
+    convenience init(hex: String) {
+        let hexString = hex.trimmingCharacters(in: .whitespacesAndNewlines).replacingOccurrences(of: "#", with: "")
+        var rgbValue: UInt64 = 0
+        Scanner(string: hexString).scanHexInt64(&rgbValue)
+        
+        self.init(
+            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
+            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
+            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
+            alpha: 1.0
+        )
+    }
 }
