@@ -441,7 +441,47 @@ p {
 .lending-unlock { position: absolute; bottom: 20px; left: 16px; right: 16px; background: linear-gradient(135deg, rgba(20,20,20,0.95), rgba(10,10,10,0.95)); border: 1px solid rgba(255,255,255,0.15); border-radius: 24px; padding: 24px; text-align: center; z-index: 6; opacity: 0; transform: translateY(40px); transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1); box-shadow: 0 20px 40px rgba(0,0,0,0.8); }
 .show-lending .lending-unlock { opacity: 1; transform: translateY(0); }
 .show-lending .storyboard-base { opacity: 0.2; filter: blur(4px); }
-.unlock-title { font-size: 0.9rem; color: var(--trust-color); font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px; }
+/* Simulator Modes & Toggles */
+.simulator-toggle { display: inline-flex; background: rgba(255,255,255,0.05); padding: 4px; border-radius: 100px; margin-top: 16px; border: 1px solid rgba(255,255,255,0.1); }
+.sim-btn { background: transparent; color: var(--text-secondary); border: none; padding: 8px 16px; font-size: 0.85rem; border-radius: 100px; cursor: pointer; transition: all 0.3s ease; }
+.sim-btn.active { background: rgba(255,255,255,0.1); color: var(--text-primary); }
+.sim-mode-container { position: absolute; top:0; left:0; right:0; bottom:0; display: none; }
+.sim-mode-container.active { display: block; }
+@media (max-width: 768px) { .simulator-toggle { display: none; } } /* Hide toggle on mobile */
+
+/* Interactive Screens */
+.sim-screen { position: absolute; top: 0; left: 0; right: 0; bottom: 60px; padding: 30px 16px 16px; opacity: 0; transform: translateX(20px); transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); pointer-events: none; overflow-y: auto; overflow-x: hidden; }
+.sim-screen::-webkit-scrollbar { display: none; }
+.sim-screen.active { opacity: 1; transform: translateX(0); pointer-events: auto; }
+.sim-greeting { font-size: 1.4rem; font-weight: 600; color: var(--text-primary); margin-bottom: 20px; }
+.sim-header { font-size: 1.2rem; font-weight: 600; color: var(--text-primary); margin-bottom: 24px; text-align: center; }
+
+/* Interactive UI Elements */
+.sim-recommendation { background: rgba(30,30,30,0.8); border: 1px solid rgba(255,255,255,0.1); padding: 16px; border-radius: 16px; display: flex; align-items: center; gap: 12px; cursor: pointer; margin-top: 20px; transition: background 0.2s; }
+.sim-recommendation:active { background: rgba(50,50,50,0.8); }
+.sim-rec-icon { font-size: 1.5rem; }
+.sim-rec-text { font-size: 0.85rem; color: var(--text-primary); line-height: 1.4; }
+.sim-balance { font-size: 2.5rem; font-weight: 600; color: var(--text-primary); text-align: center; margin-top: 20px; }
+.sim-label { font-size: 0.75rem; color: var(--text-secondary); text-align: center; text-transform: uppercase; letter-spacing: 0.1em; margin-top: 4px; }
+.sim-list { margin-top: 30px; display: flex; flex-direction: column; gap: 12px; }
+.sim-list-item { display: flex; justify-content: space-between; padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.9rem; color: var(--text-primary); }
+.sim-auto-rule { background: rgba(255,255,255,0.05); padding: 16px; border-radius: 16px; font-size: 0.9rem; color: var(--text-primary); border-left: 3px solid var(--health-color); }
+.sim-btn-primary { background: #fff; color: #000; font-weight: 600; padding: 12px; border-radius: 100px; font-size: 0.9rem; transition: transform 0.1s; }
+.sim-btn-primary:active { transform: scale(0.96); }
+.sim-btn-secondary { background: rgba(255,255,255,0.1); color: #fff; font-weight: 500; padding: 12px; border-radius: 100px; font-size: 0.9rem; }
+.sim-center { display: flex; flex-direction: column; align-items: center; justify-content: center; height: calc(100% - 60px); }
+
+/* Interactive Modals */
+.sim-modal-overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); z-index: 50; display: flex; flex-direction: column; justify-content: flex-end; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
+.sim-modal-overlay.active { opacity: 1; pointer-events: auto; }
+.sim-modal-sheet { background: #1a1a1a; border-top-left-radius: 24px; border-top-right-radius: 24px; padding: 24px 20px 40px; transform: translateY(100%); transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); border-top: 1px solid rgba(255,255,255,0.1); }
+.sim-modal-overlay.active .sim-modal-sheet { transform: translateY(0); }
+.sim-modal-title { font-size: 1.1rem; font-weight: 600; color: var(--text-primary); margin-bottom: 8px; text-align: center; }
+
+/* Interactive Tab Bar */
+.sim-tab-bar { position: absolute; bottom: 0; left: 0; right: 0; height: 60px; background: rgba(10,10,10,0.95); backdrop-filter: blur(10px); display: flex; justify-content: space-around; align-items: center; border-top: 1px solid rgba(255,255,255,0.1); z-index: 10; }
+.sim-tab { font-size: 1.2rem; color: #555; cursor: pointer; transition: color 0.3s ease, transform 0.1s; }
+.sim-tab.active { color: var(--health-color); text-shadow: 0 0 10px rgba(0,242,254,0.5); transform: scale(1.1); }
 .unlock-amount { font-size: 3rem; font-weight: 700; color: #fff; margin: 8px 0; text-shadow: 0 0 20px rgba(255,255,255,0.2); }
 .unlock-footer { font-size: 0.85rem; color: var(--text-secondary); }
 

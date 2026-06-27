@@ -107,11 +107,18 @@
             <div class="demo-copy">
                 <h2>See Pilot in motion.</h2>
                 <p>Watch how Pilot brings your money, trust, automations, and lending into one intelligent command center.</p>
+                <div class="simulator-toggle">
+                    <button class="sim-btn active" onclick="setSimMode('guided')">Guided Tour</button>
+                    <button class="sim-btn" onclick="setSimMode('interactive')">Explore Yourself</button>
+                </div>
             </div>
             <div class="demo-phone-container">
                 <div class="iphone-frame">
                     <div class="iphone-notch"></div>
                     <div class="iphone-screen">
+                        
+                        <!-- GUIDED TOUR MODE (Original Storyboard) -->
+                        <div class="sim-mode-container guided-tour-mode active">
                         <!-- Dashboard Base -->
                         <div class="storyboard-base">
                             <div class="greeting">Good Morning, Matt.</div>
@@ -183,6 +190,104 @@
                             <div class="finale-orb pulse-animation"></div>
                             <div class="finale-logo">Pilot</div>
                             <div class="finale-tagline">The AI Financial Operating System.</div>
+                        </div>
+                        </div> <!-- /GUIDED TOUR MODE -->
+
+                        <!-- INTERACTIVE SIMULATOR MODE -->
+                        <div class="sim-mode-container interactive-mode">
+                            <!-- Simulator Screens -->
+                            
+                            <!-- Command Center -->
+                            <div class="sim-screen active" id="sim-cmd">
+                                <div class="sim-greeting">Good Afternoon.</div>
+                                <div class="dashboard-grid" style="margin-bottom:12px;">
+                                    <div class="glass-widget">
+                                        <div class="widget-value sim-health-val">92</div>
+                                        <div class="widget-label">Health</div>
+                                    </div>
+                                    <div class="glass-widget">
+                                        <div class="widget-value sim-runway-val">4.2<span style="font-size:0.6em">mo</span></div>
+                                        <div class="widget-label">Runway</div>
+                                    </div>
+                                    <div class="glass-widget trust-widget" style="grid-column: span 2; padding:12px;">
+                                        <div class="widget-value sim-trust-val">842</div>
+                                        <div class="widget-label">Trust Score</div>
+                                    </div>
+                                </div>
+                                <div class="sim-recommendation" onclick="openSimModal('insight')">
+                                    <div class="sim-rec-icon">⚠️</div>
+                                    <div class="sim-rec-text">High electric bill detected.<br><span style="color:#00f2fe;font-size:0.8em;">Tap to automate</span></div>
+                                </div>
+                            </div>
+
+                            <!-- Money -->
+                            <div class="sim-screen" id="sim-money">
+                                <div class="sim-header">Money</div>
+                                <div class="sim-balance sim-balance-val">$14,250.00</div>
+                                <div class="sim-label">Total Cash</div>
+                                <div class="sim-list" id="sim-tx-list">
+                                    <div class="sim-list-item"><span>Whole Foods</span><span>-$45.20</span></div>
+                                    <div class="sim-list-item"><span>Salary</span><span style="color:#00ff66">+$3,200.00</span></div>
+                                </div>
+                            </div>
+
+                            <!-- Trust -->
+                            <div class="sim-screen" id="sim-trust">
+                                <div class="sim-header">Trust Score</div>
+                                <div class="sim-center">
+                                    <div class="finale-orb pulse-animation" style="margin-bottom:0; width:120px;height:120px;display:flex;align-items:center;justify-content:center;">
+                                        <span class="sim-trust-val" style="font-size:2.5rem;font-weight:600;color:var(--text-primary);">842</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Automations -->
+                            <div class="sim-screen" id="sim-auto">
+                                <div class="sim-header">Automations</div>
+                                <div class="sim-list" id="sim-auto-list">
+                                    <div class="sim-auto-rule"><strong>Paycheck Rule</strong><br><span style="font-size:0.8em;color:var(--text-secondary)">Move 10% to savings</span></div>
+                                </div>
+                                <div class="sim-btn-primary" style="margin-top:20px;text-align:center;">+ New Rule</div>
+                            </div>
+
+                            <!-- Lending -->
+                            <div class="sim-screen" id="sim-lend">
+                                <div class="sim-header">Pilot Credit</div>
+                                <div class="lending-card" style="position:static; transform:none; opacity:1; margin-top:40px;">
+                                    <p>You're trusted for</p>
+                                    <div class="unlock-amount" style="font-size:2.5rem;">$1,000</div>
+                                    <div class="sim-btn-primary" style="margin-top:20px;text-align:center;cursor:pointer;" onclick="openSimModal('lending')">Withdraw</div>
+                                </div>
+                            </div>
+
+                            <!-- Bottom Navigation -->
+                            <div class="sim-tab-bar">
+                                <div class="sim-tab active" data-target="sim-cmd" onclick="navSim('sim-cmd')">◎</div>
+                                <div class="sim-tab" data-target="sim-money" onclick="navSim('sim-money')">$</div>
+                                <div class="sim-tab" data-target="sim-trust" onclick="navSim('sim-trust')">●</div>
+                                <div class="sim-tab" data-target="sim-auto" onclick="navSim('sim-auto')">⚡</div>
+                                <div class="sim-tab" data-target="sim-lend" onclick="navSim('sim-lend')">💳</div>
+                            </div>
+
+                            <!-- Modals -->
+                            <div class="sim-modal-overlay" id="sim-modal-insight">
+                                <div class="sim-modal-sheet">
+                                    <div class="sim-modal-title">Electric Bill Action</div>
+                                    <p style="font-size:0.9em;color:var(--text-secondary);margin-bottom:20px;">Your bill is 27% higher. Automate payment plan?</p>
+                                    <div class="sim-btn-primary" style="text-align:center;margin-bottom:10px;cursor:pointer;" onclick="executeInsight()">Automate Plan</div>
+                                    <div class="sim-btn-secondary" style="text-align:center;cursor:pointer;" onclick="closeSimModal()">Cancel</div>
+                                </div>
+                            </div>
+
+                            <div class="sim-modal-overlay" id="sim-modal-lending">
+                                <div class="sim-modal-sheet">
+                                    <div class="sim-modal-title">Withdraw $1,000</div>
+                                    <p style="font-size:0.9em;color:var(--text-secondary);margin-bottom:20px;">Funds will be available instantly.</p>
+                                    <div class="sim-btn-primary" style="text-align:center;margin-bottom:10px;cursor:pointer;" onclick="executeLending()">Confirm</div>
+                                    <div class="sim-btn-secondary" style="text-align:center;cursor:pointer;" onclick="closeSimModal()">Cancel</div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -430,6 +535,123 @@
 
         // Start storyboard loop
         runStoryboard();
+
+        // --- INTERACTIVE SIMULATOR LOGIC ---
+        
+        // State
+        let appState = {
+            mode: 'guided',
+            balance: 14250,
+            health: 92,
+            runway: 4.2,
+            trust: 842,
+            transactions: [
+                { name: 'Whole Foods', amount: -45.20 },
+                { name: 'Salary', amount: 3200.00 }
+            ],
+            automations: [
+                { name: 'Paycheck Rule', desc: 'Move 10% to savings' }
+            ]
+        };
+
+        // DOM Elements
+        const simContainers = document.querySelectorAll('.sim-mode-container');
+        const simBtns = document.querySelectorAll('.sim-btn');
+        
+        function setSimMode(mode) {
+            appState.mode = mode;
+            simBtns.forEach(btn => btn.classList.remove('active'));
+            document.querySelector(`.sim-btn[onclick="setSimMode('${mode}')"]`).classList.add('active');
+            
+            simContainers.forEach(c => c.classList.remove('active'));
+            document.querySelector(`.${mode === 'guided' ? 'guided-tour-mode' : 'interactive-mode'}`).classList.add('active');
+            
+            if (mode === 'interactive') renderSim();
+        }
+
+        // Navigation
+        const simScreens = document.querySelectorAll('.sim-screen');
+        const simTabs = document.querySelectorAll('.sim-tab');
+        
+        function navSim(targetId) {
+            simScreens.forEach(s => s.classList.remove('active'));
+            simTabs.forEach(t => t.classList.remove('active'));
+            
+            document.getElementById(targetId).classList.add('active');
+            document.querySelector(`.sim-tab[data-target="${targetId}"]`).classList.add('active');
+        }
+
+        // Modals
+        function openSimModal(id) {
+            document.getElementById(`sim-modal-${id}`).classList.add('active');
+        }
+        function closeSimModal() {
+            document.querySelectorAll('.sim-modal-overlay').forEach(m => m.classList.remove('active'));
+        }
+
+        // Actions
+        function executeInsight() {
+            closeSimModal();
+            appState.trust += 3;
+            appState.health += 2;
+            appState.automations.push({ name: 'Bill Protection', desc: 'Auto-pay electric if high' });
+            
+            const trustValEl = document.querySelector('#sim-trust .sim-trust-val');
+            if(trustValEl) {
+                trustValEl.style.transition = 'all 0.3s';
+                trustValEl.style.transform = 'scale(1.2)';
+                trustValEl.style.color = 'var(--health-color)';
+                setTimeout(() => {
+                    trustValEl.style.transform = 'scale(1)';
+                    trustValEl.style.color = 'var(--text-primary)';
+                }, 400);
+            }
+            
+            const recEl = document.querySelector('.sim-recommendation');
+            if(recEl) recEl.style.display = 'none';
+            
+            renderSim();
+        }
+
+        function executeLending() {
+            closeSimModal();
+            appState.balance += 1000;
+            appState.runway += 0.5;
+            appState.transactions.unshift({ name: 'Pilot Credit', amount: 1000.00 });
+            
+            navSim('sim-money');
+            renderSim();
+        }
+
+        // Render
+        const formatMoney = (val) => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(val);
+
+        function renderSim() {
+            document.querySelectorAll('.sim-health-val').forEach(el => el.innerText = appState.health);
+            document.querySelectorAll('.sim-runway-val').forEach(el => el.innerHTML = `${appState.runway.toFixed(1)}<span style="font-size:0.6em">mo</span>`);
+            document.querySelectorAll('.sim-trust-val').forEach(el => el.innerText = appState.trust);
+            document.querySelectorAll('.sim-balance-val').forEach(el => el.innerText = formatMoney(appState.balance));
+            
+            const txList = document.getElementById('sim-tx-list');
+            if (txList) {
+                txList.innerHTML = appState.transactions.map(tx => `
+                    <div class="sim-list-item">
+                        <span>${tx.name}</span>
+                        <span style="color: ${tx.amount > 0 ? '#00ff66' : 'var(--text-primary)'}">${tx.amount > 0 ? '+' : ''}${formatMoney(tx.amount)}</span>
+                    </div>
+                `).join('');
+            }
+            
+            const autoList = document.getElementById('sim-auto-list');
+            if (autoList) {
+                autoList.innerHTML = appState.automations.map(a => `
+                    <div class="sim-auto-rule"><strong>${a.name}</strong><br><span style="font-size:0.8em;color:var(--text-secondary)">${a.desc}</span></div>
+                `).join('');
+            }
+        }
+        
+        // Initial setup for interactive mode
+        renderSim();
     </script>
 </body>
 </html>
