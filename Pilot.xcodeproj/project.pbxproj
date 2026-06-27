@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0171553F6C8AD7CA532A98EB /* IntegrationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45EDF2280C8D098D2B5A02A /* IntegrationManager.swift */; };
 		01F66C71641E9EA559178AFE /* AIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C54E073E34D5AE894343C4 /* AIView.swift */; };
 		111781EF05243BE8086DCEB0 /* AnimationSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7FBFF9F52B06E6665FE81F /* AnimationSystem.swift */; };
 		13A401821709BB5CCDD59D4D /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B5FA0DD1E637439421AA50 /* AppCoordinator.swift */; };
@@ -15,10 +16,14 @@
 		1D41EE8C541E4E8270F43A53 /* Spacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C7BDE5008D0AED2E548F09 /* Spacing.swift */; };
 		1E527FF7DE9977D8A9F3610A /* RouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19477D03984BA396E720A4F3 /* RouterTests.swift */; };
 		20CAED6E48DA6F71A580EA11 /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054EA88DABC045970DBC1E5B /* HapticsManager.swift */; };
+		2197FAC31032C780DA07B9A9 /* IntegrationManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4763C62984570093450E63 /* IntegrationManagerTests.swift */; };
+		22AA1CB45EB07F1EA1FE8905 /* OfferDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD256C928FCEAF32623C982 /* OfferDetailView.swift */; };
 		2325E63CB564B4C635B7ED2F /* MoneyViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A07930767A22C3AD21B532 /* MoneyViewModelTests.swift */; };
 		232CA599D58D0481275FB115 /* AutomationsOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7496F4F4AC1450E3DE8BE4 /* AutomationsOverviewView.swift */; };
 		2404B34EB0B03068172FAA04 /* PilotBottomBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65605B81755170E90A1ECE03 /* PilotBottomBar.swift */; };
+		24FD24BE171832B886992CAB /* LendingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946C52B3174AFA3B0572BF95 /* LendingManager.swift */; };
 		27E21F5ED508B1E029BFB0E7 /* AutomationBuilderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D580DE59C014C03CC293BD5 /* AutomationBuilderViewModel.swift */; };
+		2C96AE53FC4274303815D2CC /* LendingViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234BAC191A96433A3E7C62A2 /* LendingViewModels.swift */; };
 		32CF25538A05955782168B64 /* AutomationsOverviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF089907CD91235575E2A22D /* AutomationsOverviewViewModel.swift */; };
 		3E0C4A9FC940555D54417C45 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1479E50F7FC143CEC55EFA78 /* Localizable.strings */; };
 		3FA1732EDBCD111F8806CD67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30B3480AEF76A28286FD4B3C /* Assets.xcassets */; };
@@ -29,14 +34,17 @@
 		49988DD938F38BD4A5FB53F1 /* AppConfigurationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19455E9B8C74AAC74625FCD8 /* AppConfigurationTests.swift */; };
 		510FEF4F1F611F744C8DAA8D /* AutomationSimulationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629E6FD6184F22E381D0781C /* AutomationSimulationView.swift */; };
 		52E4663D04236C71A459D2F6 /* AutomationBuilderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190AA7D21314A437EF488601 /* AutomationBuilderView.swift */; };
+		549438C24DB32F31BCB139DE /* AggregationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CE7EAEC863104B1803D478 /* AggregationService.swift */; };
 		63A73444C277C2D348876658 /* HomeDashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AFFE05EFF4786F3988D7074 /* HomeDashboardViewModel.swift */; };
 		655A91C34D9FBA0A30627394 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F29153C141B5B13E7FC0197 /* AppConfiguration.swift */; };
 		65C5BED0C8883A3E6016548D /* MoneyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F516E29E4D6507197651BE0D /* MoneyView.swift */; };
 		660476A2033DB3DCD7B95E18 /* TrustMockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15EBBAD816EFA25FF3E9B9E /* TrustMockService.swift */; };
 		662A8B0CF08F5D85BB71266E /* DesignSystemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F819FCDFDCDB1E7A35A31D5 /* DesignSystemTests.swift */; };
+		689128B0FCA83978DBCAB88E /* MockAggregationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9004478ADBE593691FFDC1 /* MockAggregationService.swift */; };
 		6C9E10EAEC327F8FED8C338B /* TrustViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B801B8434CC6674DBB78F0 /* TrustViewModelTests.swift */; };
 		70BE27D4B2F560FF559515AE /* CopilotViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D19BC4E496190844FC6BC3 /* CopilotViewModelTests.swift */; };
 		73DAF54920DA4C2720F6FA71 /* MockDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1FD8202E8D027C8A1691C2 /* MockDependencyContainer.swift */; };
+		78E8CADF3E2E8423F895BAC9 /* LendingModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3B54C189C24195E11C4097 /* LendingModels.swift */; };
 		7FA15DA1BDBCE1D0A7D5867E /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4179A93F8F4C166CCD458C90 /* HomeViewModelTests.swift */; };
 		801E85C58133F151BBBD2444 /* GlassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978B4DABC181E8A583BF4201 /* GlassView.swift */; };
 		80EA84733F73DF3184E9C66B /* TrustScoreCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B02D9B808925F5BB40CD5C /* TrustScoreCard.swift */; };
@@ -49,8 +57,10 @@
 		96659B9929A9784291995713 /* AICopilotModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3E13FAFDF79FAE00A85A5B /* AICopilotModels.swift */; };
 		9778D75A4D000C2405F0F53E /* PilotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5169EE5BCE182D7B1AFBC22B /* PilotTests.swift */; };
 		9963BC0FA9FECD588A7C4ACF /* PilotCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E13B2B102B2558196BD9104 /* PilotCard.swift */; };
+		9BAA482B3F5D01984E165C7F /* LendingOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0727BA29243867A0FF13D7A4 /* LendingOverviewView.swift */; };
 		9C3EC38C30C0CD022CB9BDE9 /* HomeMockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F312BAB015965A08B67D6F4 /* HomeMockService.swift */; };
 		AB22E6C28DD609B63697FCAE /* PilotListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5D3C5BD514B7C15C0402B2 /* PilotListRow.swift */; };
+		ACF2D736A8A339C4AD999782 /* MockLendingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA9BD70D2436BA68B8297AD /* MockLendingService.swift */; };
 		ADCF43953EA2F22A025A7F89 /* WealthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46BCF20329F08F7EAD82AE7 /* WealthView.swift */; };
 		AEB2A6C1895F6F02578EFFAF /* TransactionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F00CB69EF1E0EE076441A76 /* TransactionDetailView.swift */; };
 		B07F6A3BF5F055A8132AE310 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DF31E6675E9D149702C0C1 /* EmptyStateView.swift */; };
@@ -61,20 +71,28 @@
 		BFF36C5F38E177499538D9B8 /* AutomationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = F557405AE6AB348D28475BD6 /* AutomationServices.swift */; };
 		C4756A63F273ED67C02B5ECE /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB3ECE07BE871162B7E381F /* ThemeManager.swift */; };
 		C6F7F0A6DF4E6D002107CB26 /* RootTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A763D5EC9A741857536614FD /* RootTabView.swift */; };
+		C835941093EF908E73C4533C /* LoanDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C360AA6348FB7FB141B4CE64 /* LoanDetailView.swift */; };
 		C96A6B5EED33BF08B7F633B7 /* PreviewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B975EF61A5B00135B75E1 /* PreviewContainer.swift */; };
+		CB93B75B3295C02B62E97F3F /* IntegrationModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B6945A047B4AAB50F2270F /* IntegrationModels.swift */; };
 		D0DD82D99C531A8DE4488716 /* IdentityVerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D7101C5CE8245BA869E88E /* IdentityVerificationView.swift */; };
+		D1D819E74D1F67F3C969A0C1 /* ProviderSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4091F15FB764BCE7090548E /* ProviderSelectionView.swift */; };
 		D33F0059FADF665A52BA9020 /* RouteEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE2AC4977A948D91B87E4A7 /* RouteEnums.swift */; };
+		D469B28C0D5ABEDA90163A3D /* LendingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634500CBAB8939BF9A9C96CB /* LendingService.swift */; };
 		D71303A555E016FC5948F58F /* ColorSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF08E29AEF5FD61E248A802 /* ColorSystem.swift */; };
 		D981DE12E51D8E78A92BA597 /* HomeModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4681609E2484072E182420 /* HomeModels.swift */; };
 		D9EAABB43103D072B198FA1C /* MoneyViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D27D54C83211B4B4442C843 /* MoneyViewModels.swift */; };
+		E09E1FA5CF592F2F593E891A /* LendingManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FA29957B686F54727CBC03 /* LendingManagerTests.swift */; };
+		E16F5E0737841553F70EC601 /* IntegrationsOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0DB7BB048C1F25D4668EF /* IntegrationsOverviewView.swift */; };
 		E1C0DC51F5FA0133BDE56D62 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1320CBBA1158030090B1BE2F /* DependencyContainer.swift */; };
 		E35225C5358A35C4F04720AA /* PilotButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2875AADFA1B523A166B95F /* PilotButton.swift */; };
 		E3B28732C45AF90EB94E4E53 /* MoneyOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D5E520DB50AAC1067D9E04 /* MoneyOverviewView.swift */; };
+		E3B527AB047D23AE455F8306 /* AccountLinkingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEE5E4C6789506AA6B85B91 /* AccountLinkingView.swift */; };
 		E517570BD2BD46AC36F09BD1 /* TrustOverviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A39E19F1E102E74D6EED775 /* TrustOverviewViewModel.swift */; };
 		E6E1C82664B44EDC243E9DF6 /* HomeWidgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E32C7A2699669F59B28F5B /* HomeWidgets.swift */; };
 		E9E204E6343D0363DDC88949 /* TrustDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9899EA3C4DBE79C059CF9678 /* TrustDetailView.swift */; };
 		EC8B3D88B15B0ECDA50CDE70 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10227ADEFF811FD9821D273A /* HomeView.swift */; };
 		ED3131D8C43CB59A0DEEE91C /* PilotApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBE983CCDA722A187CF7D86 /* PilotApp.swift */; };
+		ED90BAD320354BBE2E1732F9 /* IntegrationsViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBF94B04AB81C5D657597B7 /* IntegrationsViewModels.swift */; };
 		F139F78301CABC384BB9A6FC /* AutomationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27A4C838C17128F5FAF1316 /* AutomationsView.swift */; };
 		F2D0929F9422788B0B680A61 /* TrustOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CFAED7F25BFCFE84D652F5 /* TrustOverviewView.swift */; };
 		F308E2DEC3B2C05FF717582F /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43979AB68ADF879D3ADEDCCC /* AppError.swift */; };
@@ -95,7 +113,9 @@
 
 /* Begin PBXFileReference section */
 		054EA88DABC045970DBC1E5B /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
+		0727BA29243867A0FF13D7A4 /* LendingOverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LendingOverviewView.swift; sourceTree = "<group>"; };
 		09066321EE19FD8D430D9BD1 /* MoneyModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyModels.swift; sourceTree = "<group>"; };
+		0BD256C928FCEAF32623C982 /* OfferDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferDetailView.swift; sourceTree = "<group>"; };
 		0D27D54C83211B4B4442C843 /* MoneyViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyViewModels.swift; sourceTree = "<group>"; };
 		0EB161D7B0EDE253DB3C73DC /* CopilotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopilotView.swift; sourceTree = "<group>"; };
 		0EB3ECE07BE871162B7E381F /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
@@ -108,6 +128,7 @@
 		19477D03984BA396E720A4F3 /* RouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterTests.swift; sourceTree = "<group>"; };
 		1A39E19F1E102E74D6EED775 /* TrustOverviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustOverviewViewModel.swift; sourceTree = "<group>"; };
 		1AFFE05EFF4786F3988D7074 /* HomeDashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDashboardViewModel.swift; sourceTree = "<group>"; };
+		234BAC191A96433A3E7C62A2 /* LendingViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LendingViewModels.swift; sourceTree = "<group>"; };
 		2933E40AA1E6944DD496305E /* Typography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typography.swift; sourceTree = "<group>"; };
 		29A07930767A22C3AD21B532 /* MoneyViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyViewModelTests.swift; sourceTree = "<group>"; };
 		2D1FD8202E8D027C8A1691C2 /* MockDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDependencyContainer.swift; sourceTree = "<group>"; };
@@ -115,17 +136,22 @@
 		30B3480AEF76A28286FD4B3C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		32F77F7D58A9EDDB44064593 /* TrustView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustView.swift; sourceTree = "<group>"; };
 		35D5E520DB50AAC1067D9E04 /* MoneyOverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyOverviewView.swift; sourceTree = "<group>"; };
+		38B6945A047B4AAB50F2270F /* IntegrationModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegrationModels.swift; sourceTree = "<group>"; };
 		39B9204B5795F4CC0ECC874A /* AutomationViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutomationViewModelTests.swift; sourceTree = "<group>"; };
+		3BA9BD70D2436BA68B8297AD /* MockLendingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLendingService.swift; sourceTree = "<group>"; };
 		3D662BA2C4AECE3EEC3A3B49 /* CopilotMockService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopilotMockService.swift; sourceTree = "<group>"; };
+		40CE7EAEC863104B1803D478 /* AggregationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AggregationService.swift; sourceTree = "<group>"; };
 		40D19BC4E496190844FC6BC3 /* CopilotViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopilotViewModelTests.swift; sourceTree = "<group>"; };
 		4179A93F8F4C166CCD458C90 /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
 		43979AB68ADF879D3ADEDCCC /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+		46FA29957B686F54727CBC03 /* LendingManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LendingManagerTests.swift; sourceTree = "<group>"; };
 		4CF341C025832599EE6E69B0 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		4D6089F276372195A7190B4A /* StandardSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardSheet.swift; sourceTree = "<group>"; };
 		5169EE5BCE182D7B1AFBC22B /* PilotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PilotTests.swift; sourceTree = "<group>"; };
 		578B975EF61A5B00135B75E1 /* PreviewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewContainer.swift; sourceTree = "<group>"; };
 		5E13B2B102B2558196BD9104 /* PilotCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PilotCard.swift; sourceTree = "<group>"; };
 		629E6FD6184F22E381D0781C /* AutomationSimulationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutomationSimulationView.swift; sourceTree = "<group>"; };
+		634500CBAB8939BF9A9C96CB /* LendingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LendingService.swift; sourceTree = "<group>"; };
 		65605B81755170E90A1ECE03 /* PilotBottomBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PilotBottomBar.swift; sourceTree = "<group>"; };
 		69FD94C1AD2F3666FAB4807D /* ConversationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationViewModel.swift; sourceTree = "<group>"; };
 		6D7496F4F4AC1450E3DE8BE4 /* AutomationsOverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutomationsOverviewView.swift; sourceTree = "<group>"; };
@@ -133,8 +159,10 @@
 		78DF31E6675E9D149702C0C1 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
 		81C7BDE5008D0AED2E548F09 /* Spacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spacing.swift; sourceTree = "<group>"; };
 		8AFB247120E4E8F06ABFDD64 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		8CEE5E4C6789506AA6B85B91 /* AccountLinkingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountLinkingView.swift; sourceTree = "<group>"; };
 		8D7FBFF9F52B06E6665FE81F /* AnimationSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationSystem.swift; sourceTree = "<group>"; };
 		8F29153C141B5B13E7FC0197 /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
+		946C52B3174AFA3B0572BF95 /* LendingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LendingManager.swift; sourceTree = "<group>"; };
 		978B4DABC181E8A583BF4201 /* GlassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassView.swift; sourceTree = "<group>"; };
 		9899EA3C4DBE79C059CF9678 /* TrustDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustDetailView.swift; sourceTree = "<group>"; };
 		9A1E13A6CACE8BFE1B61BB64 /* TrustModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustModels.swift; sourceTree = "<group>"; };
@@ -147,16 +175,24 @@
 		A763D5EC9A741857536614FD /* RootTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabView.swift; sourceTree = "<group>"; };
 		A7B02D9B808925F5BB40CD5C /* TrustScoreCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustScoreCard.swift; sourceTree = "<group>"; };
 		AB85CEC11BD665F9FF73BE7E /* Pilot.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Pilot.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ACBF94B04AB81C5D657597B7 /* IntegrationsViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegrationsViewModels.swift; sourceTree = "<group>"; };
 		ADE2AC4977A948D91B87E4A7 /* RouteEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteEnums.swift; sourceTree = "<group>"; };
 		AEAD56A7CEDCEDCA6DEB18C5 /* MoneyMockService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyMockService.swift; sourceTree = "<group>"; };
 		B27A4C838C17128F5FAF1316 /* AutomationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutomationsView.swift; sourceTree = "<group>"; };
+		B4091F15FB764BCE7090548E /* ProviderSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderSelectionView.swift; sourceTree = "<group>"; };
 		B68C8D04B1A583BE8C4A3E37 /* AccountDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailView.swift; sourceTree = "<group>"; };
 		B8BADD6DD41A2BD872FDCC47 /* PilotIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PilotIcon.swift; sourceTree = "<group>"; };
+		C360AA6348FB7FB141B4CE64 /* LoanDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoanDetailView.swift; sourceTree = "<group>"; };
+		C45EDF2280C8D098D2B5A02A /* IntegrationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegrationManager.swift; sourceTree = "<group>"; };
+		C4A0DB7BB048C1F25D4668EF /* IntegrationsOverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegrationsOverviewView.swift; sourceTree = "<group>"; };
 		C4B5FA0DD1E637439421AA50 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		C5C54E073E34D5AE894343C4 /* AIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIView.swift; sourceTree = "<group>"; };
 		C6A0C590267FD31A317E53C0 /* AutomationModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutomationModels.swift; sourceTree = "<group>"; };
 		CFBE983CCDA722A187CF7D86 /* PilotApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PilotApp.swift; sourceTree = "<group>"; };
 		D46BCF20329F08F7EAD82AE7 /* WealthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WealthView.swift; sourceTree = "<group>"; };
+		DB4763C62984570093450E63 /* IntegrationManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegrationManagerTests.swift; sourceTree = "<group>"; };
+		DB9004478ADBE593691FFDC1 /* MockAggregationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAggregationService.swift; sourceTree = "<group>"; };
+		DD3B54C189C24195E11C4097 /* LendingModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LendingModels.swift; sourceTree = "<group>"; };
 		E0BD96245E980B2C9A3601FF /* LoadingStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingStateView.swift; sourceTree = "<group>"; };
 		E15EBBAD816EFA25FF3E9B9E /* TrustMockService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustMockService.swift; sourceTree = "<group>"; };
 		E2D559ED5DEDA766F96EB355 /* CopilotUIComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopilotUIComponents.swift; sourceTree = "<group>"; };
@@ -218,6 +254,16 @@
 			path = Sources;
 			sourceTree = "<group>";
 		};
+		2A4C17559C0304158E0EC883 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0727BA29243867A0FF13D7A4 /* LendingOverviewView.swift */,
+				C360AA6348FB7FB141B4CE64 /* LoanDetailView.swift */,
+				0BD256C928FCEAF32623C982 /* OfferDetailView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		2DB63B66A426AB40F3323889 /* PilotTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -226,6 +272,8 @@
 				40D19BC4E496190844FC6BC3 /* CopilotViewModelTests.swift */,
 				9F819FCDFDCDB1E7A35A31D5 /* DesignSystemTests.swift */,
 				4179A93F8F4C166CCD458C90 /* HomeViewModelTests.swift */,
+				DB4763C62984570093450E63 /* IntegrationManagerTests.swift */,
+				46FA29957B686F54727CBC03 /* LendingManagerTests.swift */,
 				29A07930767A22C3AD21B532 /* MoneyViewModelTests.swift */,
 				5169EE5BCE182D7B1AFBC22B /* PilotTests.swift */,
 				19477D03984BA396E720A4F3 /* RouterTests.swift */,
@@ -233,6 +281,17 @@
 			);
 			name = PilotTests;
 			path = Tests/PilotTests;
+			sourceTree = "<group>";
+		};
+		312DBF0D4D947521E8243C6A /* Integrations */ = {
+			isa = PBXGroup;
+			children = (
+				84BA89443BD24DAD7F7C5370 /* Models */,
+				BF6FFD0D1621B60A61C5304C /* Services */,
+				814BBFA1F9CD147DDD4396FA /* ViewModels */,
+				F18416BE37E37681A8DA4F7A /* Views */,
+			);
+			path = Integrations;
 			sourceTree = "<group>";
 		};
 		4309E94E625ECA6B216C680E /* Views */ = {
@@ -251,6 +310,14 @@
 				4CF341C025832599EE6E69B0 /* Router.swift */,
 			);
 			path = Navigation;
+			sourceTree = "<group>";
+		};
+		46F0BBA5C61B9DEEA1F12046 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DD3B54C189C24195E11C4097 /* LendingModels.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		5688B1B83608833E346497EF /* Models */ = {
@@ -322,10 +389,28 @@
 				8D4ABF70BC3DA0131B588303 /* AICopilot */,
 				E78B4D1FA757E925232248B5 /* Automations */,
 				69C601A0FDA51598D060C5A6 /* Home */,
+				312DBF0D4D947521E8243C6A /* Integrations */,
+				EE5075B0EBEFA421EE17CBF4 /* Lending */,
 				11E331C5536D6B0687CC4E61 /* Money */,
 				E16214718C96F50D44D8018B /* Trust */,
 			);
 			path = Features;
+			sourceTree = "<group>";
+		};
+		814BBFA1F9CD147DDD4396FA /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				ACBF94B04AB81C5D657597B7 /* IntegrationsViewModels.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		84BA89443BD24DAD7F7C5370 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				38B6945A047B4AAB50F2270F /* IntegrationModels.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		8D4ABF70BC3DA0131B588303 /* AICopilot */ = {
@@ -348,12 +433,32 @@
 			path = PreviewSupport;
 			sourceTree = "<group>";
 		};
+		9888D3165B6F0ABAC4ABAC05 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				946C52B3174AFA3B0572BF95 /* LendingManager.swift */,
+				634500CBAB8939BF9A9C96CB /* LendingService.swift */,
+				3BA9BD70D2436BA68B8297AD /* MockLendingService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		BF2BA6B194C8178221DDC786 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				C6A0C590267FD31A317E53C0 /* AutomationModels.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		BF6FFD0D1621B60A61C5304C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				40CE7EAEC863104B1803D478 /* AggregationService.swift */,
+				C45EDF2280C8D098D2B5A02A /* IntegrationManager.swift */,
+				DB9004478ADBE593691FFDC1 /* MockAggregationService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		C2413706F1250B8CC7D222DE /* Services */ = {
@@ -479,12 +584,31 @@
 			path = Automations;
 			sourceTree = "<group>";
 		};
+		EA867B9C6AE3A9499510F2FC /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				234BAC191A96433A3E7C62A2 /* LendingViewModels.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		EC965E17070FF533E026DCC8 /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				9F312BAB015965A08B67D6F4 /* HomeMockService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		EE5075B0EBEFA421EE17CBF4 /* Lending */ = {
+			isa = PBXGroup;
+			children = (
+				46F0BBA5C61B9DEEA1F12046 /* Models */,
+				9888D3165B6F0ABAC4ABAC05 /* Services */,
+				EA867B9C6AE3A9499510F2FC /* ViewModels */,
+				2A4C17559C0304158E0EC883 /* Views */,
+			);
+			path = Lending;
 			sourceTree = "<group>";
 		};
 		F1796B2D17310884284C8E8A /* Utilities */ = {
@@ -494,6 +618,16 @@
 				8AFB247120E4E8F06ABFDD64 /* Logger.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		F18416BE37E37681A8DA4F7A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8CEE5E4C6789506AA6B85B91 /* AccountLinkingView.swift */,
+				C4A0DB7BB048C1F25D4668EF /* IntegrationsOverviewView.swift */,
+				B4091F15FB764BCE7090548E /* ProviderSelectionView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		F417B696D9C7F0778F4D9F45 /* ViewModels */ = {
@@ -610,6 +744,8 @@
 				96659B9929A9784291995713 /* AICopilotModels.swift in Sources */,
 				01F66C71641E9EA559178AFE /* AIView.swift in Sources */,
 				8F04316788B1FCD1EB7C6005 /* AccountDetailView.swift in Sources */,
+				E3B527AB047D23AE455F8306 /* AccountLinkingView.swift in Sources */,
+				549438C24DB32F31BCB139DE /* AggregationService.swift in Sources */,
 				111781EF05243BE8086DCEB0 /* AnimationSystem.swift in Sources */,
 				655A91C34D9FBA0A30627394 /* AppConfiguration.swift in Sources */,
 				13A401821709BB5CCDD59D4D /* AppCoordinator.swift in Sources */,
@@ -638,14 +774,27 @@
 				EC8B3D88B15B0ECDA50CDE70 /* HomeView.swift in Sources */,
 				E6E1C82664B44EDC243E9DF6 /* HomeWidgets.swift in Sources */,
 				D0DD82D99C531A8DE4488716 /* IdentityVerificationView.swift in Sources */,
+				0171553F6C8AD7CA532A98EB /* IntegrationManager.swift in Sources */,
+				CB93B75B3295C02B62E97F3F /* IntegrationModels.swift in Sources */,
+				E16F5E0737841553F70EC601 /* IntegrationsOverviewView.swift in Sources */,
+				ED90BAD320354BBE2E1732F9 /* IntegrationsViewModels.swift in Sources */,
+				24FD24BE171832B886992CAB /* LendingManager.swift in Sources */,
+				78E8CADF3E2E8423F895BAC9 /* LendingModels.swift in Sources */,
+				9BAA482B3F5D01984E165C7F /* LendingOverviewView.swift in Sources */,
+				D469B28C0D5ABEDA90163A3D /* LendingService.swift in Sources */,
+				2C96AE53FC4274303815D2CC /* LendingViewModels.swift in Sources */,
 				1A6B54ADC9BD24224CD1F1C1 /* LoadingStateView.swift in Sources */,
+				C835941093EF908E73C4533C /* LoanDetailView.swift in Sources */,
 				868FDC8471174171FC1AAEE5 /* Logger.swift in Sources */,
+				689128B0FCA83978DBCAB88E /* MockAggregationService.swift in Sources */,
 				73DAF54920DA4C2720F6FA71 /* MockDependencyContainer.swift in Sources */,
+				ACF2D736A8A339C4AD999782 /* MockLendingService.swift in Sources */,
 				8842683E99D2222EC418C8E7 /* MoneyMockService.swift in Sources */,
 				1C30F03252C26E1DD72625AB /* MoneyModels.swift in Sources */,
 				E3B28732C45AF90EB94E4E53 /* MoneyOverviewView.swift in Sources */,
 				65C5BED0C8883A3E6016548D /* MoneyView.swift in Sources */,
 				D9EAABB43103D072B198FA1C /* MoneyViewModels.swift in Sources */,
+				22AA1CB45EB07F1EA1FE8905 /* OfferDetailView.swift in Sources */,
 				ED3131D8C43CB59A0DEEE91C /* PilotApp.swift in Sources */,
 				2404B34EB0B03068172FAA04 /* PilotBottomBar.swift in Sources */,
 				E35225C5358A35C4F04720AA /* PilotButton.swift in Sources */,
@@ -654,6 +803,7 @@
 				AB22E6C28DD609B63697FCAE /* PilotListRow.swift in Sources */,
 				8624FF2DFDEC8D28EB3CDD8E /* PilotTextField.swift in Sources */,
 				C96A6B5EED33BF08B7F633B7 /* PreviewContainer.swift in Sources */,
+				D1D819E74D1F67F3C969A0C1 /* ProviderSelectionView.swift in Sources */,
 				C6F7F0A6DF4E6D002107CB26 /* RootTabView.swift in Sources */,
 				D33F0059FADF665A52BA9020 /* RouteEnums.swift in Sources */,
 				422EC34A100D1F59F0C23D78 /* Router.swift in Sources */,
@@ -682,6 +832,8 @@
 				70BE27D4B2F560FF559515AE /* CopilotViewModelTests.swift in Sources */,
 				662A8B0CF08F5D85BB71266E /* DesignSystemTests.swift in Sources */,
 				7FA15DA1BDBCE1D0A7D5867E /* HomeViewModelTests.swift in Sources */,
+				2197FAC31032C780DA07B9A9 /* IntegrationManagerTests.swift in Sources */,
+				E09E1FA5CF592F2F593E891A /* LendingManagerTests.swift in Sources */,
 				2325E63CB564B4C635B7ED2F /* MoneyViewModelTests.swift in Sources */,
 				9778D75A4D000C2405F0F53E /* PilotTests.swift in Sources */,
 				1E527FF7DE9977D8A9F3610A /* RouterTests.swift in Sources */,

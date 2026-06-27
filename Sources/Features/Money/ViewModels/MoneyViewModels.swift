@@ -4,17 +4,36 @@ import Observation
 @Observable
 final class MoneyOverviewViewModel {
     private let service: MoneyService
+    private let integrationManager: IntegrationManager
     
     var isLoading = false
-    var accounts: [Account] = []
+    private var baseAccounts: [Account] = []
+    
+    // Merge base accounts from MoneyService with linked accounts from IntegrationManager
+    var accounts: [Account] {
+        let linkedAccountsAsCoreAccounts = integrationManager.linkedAccounts.map { linked in
+            Account(
+                id: linked.id,
+                name: "\(linked.provider.name) \(linked.name)",
+                type: AccountType(rawValue: linked.type) ?? .checking,
+                maskedNumber: linked.mask,
+                balance: 0, // Mock doesn't store balance in LinkedAccount right now
+                availableBalance: nil,
+                interestRate: nil,
+                currency: "USD"
+            )
+        }
+        return baseAccounts + linkedAccountsAsCoreAccounts
+    }
     
     // Grouping for the UI
     var groupedAccounts: [AccountType: [Account]] {
         Dictionary(grouping: accounts, by: { $0.type })
     }
     
-    init(service: MoneyService) {
+    init(service: MoneyService, integrationManager: IntegrationManager) {
         self.service = service
+        self.integrationManager = integrationManager
     }
     
     @MainActor
@@ -23,7 +42,7 @@ final class MoneyOverviewViewModel {
         defer { isLoading = false }
         
         do {
-            self.accounts = try await service.fetchAccounts()
+            self.baseAccounts = try await service.fetchAccounts()
         } catch {
             print("Failed to load accounts: \(error)")
         }

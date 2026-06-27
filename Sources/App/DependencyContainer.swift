@@ -13,6 +13,8 @@ final class DependencyContainer {
     let trustService: TrustService
     let automationsStorage: AutomationsStorageService
     let automationRunner: AutomationRunner
+    let lendingService: LendingService
+    let lendingManager: LendingManager
     
     private init(
         configuration: AppConfiguration = .live,
@@ -22,7 +24,9 @@ final class DependencyContainer {
         moneyService: MoneyService = MoneyMockService(),
         trustService: TrustService = TrustMockService(),
         automationsStorage: AutomationsStorageService = InMemoryAutomationsStorageService(),
-        automationRunner: AutomationRunner = AutomationMockRunner()
+        automationRunner: AutomationRunner = AutomationMockRunner(),
+        lendingService: LendingService = LendingMockService(),
+        lendingManager: LendingManager = LendingManager(lendingService: LendingMockService(), trustService: TrustMockService(), moneyService: MoneyMockService())
     ) {
         self.configuration = configuration
         self.logger = logger
@@ -32,5 +36,7 @@ final class DependencyContainer {
         self.trustService = trustService
         self.automationsStorage = automationsStorage
         self.automationRunner = automationRunner
+        self.lendingService = lendingService
+        self.lendingManager = lendingManager
     }
 }

@@ -21,10 +21,10 @@ struct RootTabView: View {
                 }
                 .tag(AppTab.money)
             
-            WealthView()
-                .environment(coordinator.wealthRouter)
+            LendingOverviewView()
+                // .environment(coordinator.wealthRouter) // keeping simple for now
                 .tabItem {
-                    Label(AppTab.wealth.title, systemImage: AppTab.wealth.iconName)
+                    Label("Lending", systemImage: "dollarsign.arrow.circlepath")
                 }
                 .tag(AppTab.wealth)
             

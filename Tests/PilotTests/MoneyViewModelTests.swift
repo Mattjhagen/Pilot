@@ -6,7 +6,7 @@ struct MoneyViewModelTests {
     
     @Test func testMoneyOverviewGrouping() async {
         let service = MoneyMockService()
-        let overviewVM = MoneyOverviewViewModel(service: service)
+        let overviewVM = MoneyOverviewViewModel(service: service, integrationManager: IntegrationManager())
         
         await overviewVM.loadAccounts()
         

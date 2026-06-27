@@ -5,7 +5,10 @@ struct MoneyOverviewView: View {
     @State private var viewModel: MoneyOverviewViewModel
     
     init() {
-        _viewModel = State(initialValue: MoneyOverviewViewModel(service: DependencyContainer.shared.moneyService))
+        _viewModel = State(initialValue: MoneyOverviewViewModel(
+            service: DependencyContainer.shared.moneyService,
+            integrationManager: DependencyContainer.shared.integrationManager
+        ))
     }
     
     var body: some View {

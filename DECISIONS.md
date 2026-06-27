@@ -680,7 +680,88 @@ Positive
 • Natural language summaries are instantly available and easy to unit test.
 
 Tradeoffs
-• Automations will not persist across app restarts until the storage layer is upgraded.⸻
+• Automations will not persist across app restarts until the storage layer is upgraded.
+
+⸻
+
+ADR-014
+
+Date
+
+2026-06-26
+
+Status
+
+Accepted
+
+Decision
+
+For Phase 09 (Integrations), we will introduce an abstraction layer (`AggregationService` protocol) rather than coupling directly to a third-party SDK (like Plaid). We will mock the entire authentication and data-fetching pipeline locally using `MockAggregationService`.
+
+Context
+
+Pilot needs to connect to external financial institutions. Integrating a real aggregator requires complex developer accounts, API keys, and handling sensitive financial data, which is out of scope for the current UI/UX validation phase. Furthermore, tightly coupling the app to a specific vendor risks massive refactoring if the vendor changes.
+
+Alternatives Considered
+
+• Integrating a real Plaid Sandbox environment.
+• Bypassing an abstraction layer and having the UI talk directly to a mock network client.
+
+Decision
+
+1. **Protocol Abstraction**: By defining `AggregationService`, the rest of the application (View Models, `IntegrationManager`) remains completely agnostic to *how* data is fetched.
+2. **Local Mocking**: `MockAggregationService` simulates network latency and authentication failures, allowing us to build out the UI loading, error, and success states robustly.
+3. **Decoupled Observation**: The `MoneyOverviewViewModel` observes the `IntegrationManager` directly. This allows us to combine the mocked static accounts with the newly "linked" external accounts purely on the client side without complicating the data layer.
+
+Consequences
+
+Positive
+• Maximum flexibility for future vendor choices.
+• UI and error handling can be thoroughly tested without real API rate limits.
+• Ensures the app architecture is fully scalable before touching real PII.
+
+Tradeoffs
+• None. This is standard enterprise best practice for separating concerns.
+
+⸻
+
+ADR-015
+
+Date
+
+2026-06-26
+
+Status
+
+Accepted
+
+Decision
+
+For Phase 10 (Lending), we will simulate trust-based lending using an in-memory `LendingManager` and a `MockLendingService`. The underwriting engine will deterministically evaluate the `TrustScore` from the Trust module to generate personalized `LoanOffer`s without performing real credit checks or API calls.
+
+Context
+
+Pilot envisions an alternative credit ecosystem. To validate the UX of this flow—reviewing terms, applying, and managing repayment schedules—we need a robust data model. However, real loan origination involves severe regulatory (KYC/AML), capital, and compliance overhead.
+
+Alternatives Considered
+
+• Hardcoding a static list of generic loan offers.
+• Connecting to a sandbox environment of a real lending-as-a-service provider.
+
+Decision
+
+1. **Protocol Abstraction**: As with Phase 09, we use a `LendingService` protocol so the UI is decoupled from the backend logic.
+2. **Trust-Based Algorithm**: We built a deterministic algorithm into `MockLendingService` that translates Trust Score points (over a baseline of 500) into APR discounts. This demonstrates the product value prop dynamically.
+3. **Mock Disbursement**: The `LendingManager` acts as the orchestrator. When a loan is approved, it logs a mock disbursement intended for the `MoneyService`. This proves the cross-module communication architecture.
+
+Consequences
+
+Positive
+• Safe, rapid prototyping of complex financial UI flows without regulatory risk.
+• Clear demonstration of the "Trust Score" value proposition.
+
+Tradeoffs
+• `LendingManager` is tightly coupled to mock logic temporarily until SwiftData/CloudKit persistence is fully implemented across the app.⸻
 
 ADR-005
 
