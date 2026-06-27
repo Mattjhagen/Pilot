@@ -1,0 +1,8 @@
+/* 
+  Localizable.strings
+  Pilot
+*/
+
+"loading.message" = "Loading...";
+"error.unauthenticated" = "Please log in to continue.";
+"error.unknown" = "An unexpected error occurred.";
