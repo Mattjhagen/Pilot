@@ -334,6 +334,10 @@ p {
 .cta-card { max-width: 600px; margin: 0 auto; text-align: center; }
 .cta-card h2 { margin-bottom: var(--spacing-lg); }
 .waitlist-form { display: flex; gap: var(--spacing-sm); justify-content: center; }
+.form-message { margin-top: 16px; font-size: 0.9rem; text-align: center; opacity: 0; transition: opacity 0.3s ease; height: 20px; }
+.form-message.success, .form-message.duplicate, .form-message.error { opacity: 1; }
+.form-message.success, .form-message.duplicate { color: var(--health-color); }
+.form-message.error { color: #ff6b6b; }
 .waitlist-form input {
     padding: 18px 24px; border-radius: 100px;
     border: 1px solid var(--glass-border);

@@ -394,10 +394,11 @@
     <section id="early-access" class="section early-access scroll-reveal">
         <div class="glass-card cta-card">
             <h2>Join the waitlist.</h2>
-            <form class="waitlist-form" onsubmit="event.preventDefault(); window.location.href='mailto:earlyaccess@pilotfinance.space?subject=Pilot Early Access Request';">
-                <input type="email" placeholder="Email address" required>
-                <button type="submit" class="btn-primary">Reserve Spot</button>
+            <form id="waitlist-form" class="waitlist-form">
+                <input type="email" id="waitlist-email" placeholder="Email address" required>
+                <button type="submit" id="waitlist-submit" class="btn-primary">Reserve Spot</button>
             </form>
+            <div id="waitlist-message" class="form-message"></div>
             <p style="margin-top: 16px; font-size: 0.875rem; color: var(--text-secondary);">Early access is currently handled manually while Pilot is in prototype review.</p>
         </div>
     </section>
@@ -652,6 +653,57 @@
         
         // Initial setup for interactive mode
         renderSim();
+
+        // --- WAITLIST LOGIC ---
+        const WAITLIST_ENDPOINT = "https://YOUR_PROJECT.functions.supabase.co/waitlist-signup";
+        
+        const waitlistForm = document.getElementById('waitlist-form');
+        const waitlistSubmit = document.getElementById('waitlist-submit');
+        const waitlistMessage = document.getElementById('waitlist-message');
+
+        if (waitlistForm) {
+            waitlistForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const emailInput = document.getElementById('waitlist-email');
+                const email = emailInput.value.trim();
+                if (!email) return;
+
+                // Loading state
+                waitlistSubmit.innerText = 'Joining...';
+                waitlistSubmit.disabled = true;
+                waitlistMessage.className = 'form-message';
+                waitlistMessage.innerText = '';
+
+                try {
+                    const response = await fetch(WAITLIST_ENDPOINT, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ email })
+                    });
+
+                    const data = await response.json();
+
+                    if (response.status === 200) {
+                        waitlistMessage.className = 'form-message success';
+                        waitlistMessage.innerText = 'You’re on the list. Welcome aboard.';
+                        emailInput.value = '';
+                    } else if (response.status === 409 || data.message === 'duplicate') {
+                        waitlistMessage.className = 'form-message duplicate';
+                        waitlistMessage.innerText = 'You’re already on the early access list.';
+                        emailInput.value = '';
+                    } else {
+                        throw new Error(data.error || 'Failed to join');
+                    }
+                } catch (error) {
+                    console.error('Waitlist error:', error);
+                    waitlistMessage.className = 'form-message error';
+                    waitlistMessage.innerText = 'Something went wrong. Please try again.';
+                } finally {
+                    waitlistSubmit.innerText = 'Reserve Spot';
+                    waitlistSubmit.disabled = false;
+                }
+            });
+        }
     </script>
 </body>
 </html>
