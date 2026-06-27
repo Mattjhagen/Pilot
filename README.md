@@ -1,169 +1,46 @@
-Pilot
+# Pilot - AI Financial Operating System
 
-The AI Operating System for Your Financial Life
+Pilot is a modern, modular, AI-powered financial operating system designed for iOS. It eschews traditional budgeting in favor of an intelligent, proactive architecture that feels like a dedicated CFO in your pocket.
 
-⸻
+## Overview
 
-Vision
+This repository contains the **v1.0 Mock Prototype** of Pilot. It implements a complete UI/UX and architectural foundation using Swift, SwiftUI, and Observation. To allow rapid iteration, external APIs (banking, lending, KYC) have been securely mocked behind protocol boundaries.
 
-Pilot is not a bank.
+## Features
 
-Pilot is not a budgeting app.
+- **Dashboard**: A dynamic command center outlining available cash, upcoming bills, and immediate AI insights.
+- **AI Copilot**: A conversational interface leveraging a (mock) LLM to analyze spending and recommend actions.
+- **Money**: An aggregated view of all linked checking, savings, and credit accounts.
+- **Trust**: An alternative credit-scoring engine evaluating spending habits over raw FICO scores.
+- **Automations**: A natural-language rule builder for "If This, Then That" financial workflows.
+- **Integrations**: A secure, protocol-based mock system for linking external bank accounts.
+- **Lending**: A dynamic loan origination flow offering discounts based on the user's Trust Score.
 
-Pilot is not a chatbot.
+## Architecture
 
-Pilot is an AI-powered Financial Operating System that helps people make smarter financial decisions while reducing stress and automating everyday financial tasks.
+Pilot enforces strict architectural boundaries:
+- **Views**: Declarative SwiftUI structures handling state display.
+- **ViewModels**: Powered by `@Observable`, orchestrating state and business logic.
+- **Services**: Abstracted protocols (`TrustService`, `MoneyService`, `LendingService`) hiding the underlying mock logic (and eventually the real network stack).
+- **Navigation**: Managed through strongly-typed enums and a multi-router `AppCoordinator` pattern.
 
-The long-term vision is for Pilot to become the intelligence layer that sits above every financial institution a user interacts with.
+For detailed architectural breakdowns, see:
+- [Design System](docs/architecture/DesignSystem.md)
+- [Automations](docs/architecture/Automations.md)
+- [Integrations](docs/architecture/Integrations.md)
+- [Lending](docs/architecture/Lending.md)
 
-Pilot should eventually become the application users trust most with understanding and managing their financial lives.
+## Building the Project
 
-⸻
+We use `xcodegen` to maintain a clean project structure.
 
-Mission
+1. Ensure [XcodeGen](https://github.com/yonaskolb/XcodeGen) is installed (`brew install xcodegen`).
+2. Run `xcodegen generate` from the root directory.
+3. Open `Pilot.xcodeproj`.
+4. Select an iOS Simulator and press Run.
 
-Traditional fintech products organize financial information.
+## Roadmap & Decisions
 
-Pilot actively helps people make better financial decisions.
+All technical decisions are recorded as ADRs in [DECISIONS.md](DECISIONS.md).
 
-The application should continuously answer three questions:
-
-* Where am I financially?
-* What deserves my attention?
-* What should I do next?
-
-If a feature cannot improve one of those answers, it probably does not belong.
-
-⸻
-
-Product Philosophy
-
-Pilot believes that software should do more than display information.
-
-Software should think.
-
-Software should anticipate.
-
-Software should automate.
-
-Money should increasingly manage itself.
-
-Users should spend less time worrying about finances and more time living their lives.
-
-⸻
-
-Core Product Areas
-
-Pilot is designed as a collection of intelligent systems rather than separate products.
-
-Planned areas include:
-
-* AI Financial Copilot
-* Money Management
-* Financial Health
-* Trust Score
-* Financial Goals
-* Intelligent Automations
-* Savings
-* Investing
-* Lending
-* Notifications
-* Widgets
-* Connected Financial Institutions
-
-Each feature exists as part of a unified operating system.
-
-⸻
-
-Apple-First Experience
-
-Pilot is built exclusively with native Apple technologies.
-
-Primary technologies include:
-
-* SwiftUI
-* SwiftData
-* Observation
-* Async/Await
-* Structured Concurrency
-* Swift Testing
-
-The experience should feel as though it belongs alongside Apple’s first-party applications.
-
-Performance, accessibility, privacy, and polish are priorities—not afterthoughts.
-
-⸻
-
-Engineering Philosophy
-
-Pilot favors:
-
-* Simplicity
-* Readability
-* Modularity
-* Maintainability
-* Native APIs
-* Reusable components
-* Long-term architecture over short-term convenience
-
-Every commit should leave the project healthier than it was before.
-
-⸻
-
-Repository Documents
-
-This repository intentionally separates responsibilities across three core documents.
-
-README.md
-
-Defines the product vision.
-
-Explains what Pilot is, why it exists, and the long-term direction of the project.
-
-AGENTS.md
-
-Defines engineering rules for AI coding agents.
-
-Every AI assistant contributing to this repository should treat AGENTS.md as the project’s engineering constitution.
-
-It contains implementation guardrails, coding standards, architectural principles, and workflow expectations.
-
-Before making significant changes, AI agents should review this document.
-
-DECISIONS.md
-
-Maintains the project’s Architectural Decision Record (ADR).
-
-This file documents why important architectural decisions were made.
-
-It is not a changelog.
-
-It is not commit history.
-
-Whenever a significant architectural decision is made, a new ADR should be appended rather than modifying previous entries.
-
-Historical reasoning is preserved to help future contributors understand the evolution of the project.
-
-⸻
-
-Development Workflow
-
-Before implementing significant features:
-
-1. Understand the product vision described in this README.
-2. Follow the engineering rules in AGENTS.md.
-3. Review DECISIONS.md for relevant architectural context.
-4. If introducing a major architectural decision, document it in DECISIONS.md before implementation.
-5. Implement incrementally while preserving existing architecture whenever possible.
-
-⸻
-
-Long-Term Goal
-
-Pilot should eventually become the operating system users trust to manage every aspect of their financial lives.
-
-Not because it holds their money.
-
-Because it understands it.
-
-Every engineering decision should move the project toward that vision.
+For the upcoming phases focusing on real backend synchronization and third-party APIs, see [roadmap_v2.md](docs/roadmap_v2.md).
