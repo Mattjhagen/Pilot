@@ -734,6 +734,573 @@ p {
     to   { opacity: 1; transform: translateY(0); }
 }
 
+/* ── Portfolio Lookbook ──────────────────────────────────────────────────── */
+
+.portfolio-section { overflow: hidden; }
+
+.portfolio-header {
+    padding-bottom: 2rem;
+}
+
+.lookbook-wrap {
+    position: relative;
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 0 5% 80px;
+    touch-action: pan-y;
+}
+
+/* The stage that holds all pages */
+.lookbook {
+    position: relative;
+    height: 480px;
+    perspective: 1400px;
+    outline: none;
+}
+
+/* Individual pages — stacked via absolute positioning */
+.lb-page {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 3rem;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    /* Default "waiting to the right" position */
+    transform: translateX(48px) rotateY(-4deg);
+    transition:
+        opacity 0.52s cubic-bezier(0.4, 0, 0.2, 1),
+        transform 0.52s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+    will-change: transform, opacity;
+}
+
+/* Active (visible) page */
+.lb-page.active {
+    opacity: 1;
+    transform: translateX(0) rotateY(0);
+    pointer-events: auto;
+}
+
+/* Visible but not yet active — needed during transition */
+.lb-page.lb-page--visible {
+    pointer-events: none;
+}
+
+/* Exit to the left (going forward) */
+.lb-page.lb-exit-left {
+    opacity: 0;
+    transform: translateX(-48px) rotateY(4deg);
+}
+
+/* Exit to the right (going backward) */
+.lb-page.lb-exit-right {
+    opacity: 0;
+    transform: translateX(48px) rotateY(-4deg);
+}
+
+/* Pre-position: about to enter from the right */
+.lb-page.lb-enter-right {
+    opacity: 0;
+    transform: translateX(48px) rotateY(-4deg);
+    transition: none;
+}
+
+/* Pre-position: about to enter from the left */
+.lb-page.lb-enter-left {
+    opacity: 0;
+    transform: translateX(-48px) rotateY(4deg);
+    transition: none;
+}
+
+/* ── Mockup browser frame ── */
+.lb-mockup {
+    position: relative;
+}
+
+.lb-browser {
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--border-strong);
+    background: #0b0b0b;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.5), 0 2px 0 rgba(255,255,255,0.04) inset;
+}
+
+.lb-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 14px;
+    background: #111111;
+    border-bottom: 1px solid var(--border);
+}
+
+.lb-dots-frame {
+    display: flex;
+    gap: 5px;
+    flex-shrink: 0;
+}
+
+.lb-dots-frame span {
+    display: block;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.08);
+}
+
+.lb-url {
+    flex: 1;
+    height: 22px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    font-size: 0.6875rem;
+    color: var(--text-dim);
+    font-family: inherit;
+    letter-spacing: 0.01em;
+}
+
+/* Shared screen canvas */
+.lb-screen {
+    height: 320px;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    background: #0a0a0a;
+}
+
+/* Shared in-screen elements */
+.msc-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 18px 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.msc-logo {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: #fff;
+}
+
+.msc-nav-items {
+    display: flex;
+    gap: 10px;
+}
+
+.msc-nav-items span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    border-radius: 2px;
+    background: rgba(255,255,255,0.1);
+}
+
+.msc-hero {
+    padding: 18px 18px 10px;
+}
+
+.msc-headline {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #fff;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    margin-bottom: 6px;
+}
+
+.msc-sub {
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.35);
+    margin-bottom: 14px;
+}
+
+.msc-cta-row {
+    display: flex;
+    gap: 8px;
+}
+
+.msc-btn {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    padding: 7px 14px;
+    border-radius: 100px;
+    border: 1px solid rgba(255,255,255,0.15);
+    color: rgba(255,255,255,0.7);
+    display: inline-block;
+}
+
+.msc-btn--fill {
+    background: #fff;
+    color: #000;
+    border-color: transparent;
+}
+
+/* ── PacMac Mobile screen ── */
+.lb-screen--pm .msc-hero { padding-top: 16px; }
+
+.msc-plans {
+    display: flex;
+    gap: 8px;
+    padding: 0 18px 16px;
+}
+
+.msc-plan {
+    flex: 1;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 8px;
+    padding: 10px 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.msc-plan--active {
+    background: rgba(255,255,255,0.09);
+    border-color: rgba(255,255,255,0.22);
+}
+
+.msc-plan-name {
+    font-size: 0.6rem;
+    color: rgba(255,255,255,0.45);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.msc-plan-price {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+/* ── Event Transport screen ── */
+.et-hero {
+    padding: 16px 18px 10px;
+}
+
+.et-label {
+    font-size: 0.55rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    color: rgba(255,255,255,0.3);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.et-headline {
+    font-size: 1.75rem;
+    font-weight: 500;
+    letter-spacing: -0.04em;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.et-divider {
+    width: 40px;
+    height: 1px;
+    background: rgba(255,255,255,0.2);
+    margin-bottom: 2px;
+}
+
+.et-services {
+    display: flex;
+    gap: 6px;
+    padding: 10px 18px 0;
+}
+
+.et-service {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.65rem;
+    color: rgba(255,255,255,0.55);
+}
+
+.et-svc-icon {
+    width: 22px;
+    height: 22px;
+    border-radius: 6px;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* ── P3 Lending screen ── */
+.p3-hero {
+    padding: 14px 18px 12px;
+}
+
+.p3-headline {
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: #fff;
+    line-height: 1.3;
+    letter-spacing: -0.025em;
+}
+
+.p3-stats {
+    display: flex;
+    gap: 0;
+    padding: 0 18px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.07);
+    margin: 0 18px;
+}
+
+.p3-stat {
+    flex: 1;
+    padding: 12px 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    border-right: 1px solid rgba(255,255,255,0.06);
+    background: rgba(255,255,255,0.02);
+}
+
+.p3-stat:last-child { border-right: none; }
+
+.p3-stat-val {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: -0.03em;
+}
+
+.p3-stat-lbl {
+    font-size: 0.55rem;
+    color: rgba(255,255,255,0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+/* ── PackieAI screen ── */
+.pai-hero {
+    padding: 14px 18px 10px;
+}
+
+.pai-tag {
+    display: inline-block;
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 3px 10px;
+    border-radius: 100px;
+    margin-bottom: 8px;
+}
+
+.pai-headline {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #fff;
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+    margin-bottom: 0;
+}
+
+.pai-prompt {
+    margin: 12px 18px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    padding: 10px 12px;
+}
+
+.pai-prompt-bar {
+    font-size: 0.65rem;
+    color: rgba(255,255,255,0.5);
+}
+
+.pai-cursor::after {
+    content: '|';
+    animation: blink 1s step-end infinite;
+    color: rgba(255,255,255,0.6);
+}
+
+@keyframes blink { 50% { opacity: 0; } }
+
+.pai-chips {
+    display: flex;
+    gap: 6px;
+    padding: 0 18px;
+    flex-wrap: wrap;
+}
+
+.pai-chip {
+    font-size: 0.6rem;
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 100px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: rgba(255,255,255,0.6);
+}
+
+/* ── Custom Contractor screen ── */
+.cc-hero {
+    padding: 16px 18px 10px;
+}
+
+.cc-headline {
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: #fff;
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+    margin-bottom: 6px;
+}
+
+.cc-sub {
+    font-size: 0.65rem;
+    color: rgba(255,255,255,0.35);
+    margin-bottom: 0;
+}
+
+.cc-services {
+    display: flex;
+    gap: 6px;
+    padding: 12px 18px 0;
+    flex-wrap: wrap;
+}
+
+.cc-svc {
+    font-size: 0.65rem;
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 6px;
+    border: 1px solid rgba(255,255,255,0.1);
+    color: rgba(255,255,255,0.5);
+    background: rgba(255,255,255,0.03);
+}
+
+/* ── Info panel (right column) ── */
+.lb-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.lb-counter {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.lb-info h3 {
+    font-size: 1.75rem;
+    font-weight: 500;
+    letter-spacing: -0.03em;
+    color: var(--text);
+    margin-bottom: 0.75rem;
+}
+
+.lb-info > p {
+    font-size: 1rem;
+    margin-bottom: 1.25rem;
+}
+
+.lb-features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.75rem;
+}
+
+.lb-features li {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    padding-left: 1.1rem;
+    position: relative;
+}
+
+.lb-features li::before {
+    content: '–';
+    position: absolute;
+    left: 0;
+    color: var(--text-dim);
+}
+
+.btn-view {
+    align-self: flex-start;
+    padding: 10px 22px;
+    font-size: 0.875rem;
+}
+
+/* ── Arrow buttons ── */
+.lb-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+    z-index: 10;
+}
+
+.lb-arrow:hover:not(:disabled) {
+    background: rgba(255,255,255,0.08);
+    color: var(--text);
+    border-color: var(--border-strong);
+}
+
+.lb-arrow:disabled {
+    opacity: 0.25;
+    cursor: default;
+}
+
+.lb-arrow--prev { left: -22px; }
+.lb-arrow--next { right: -22px; }
+
+/* ── Dot navigation ── */
+.lb-dots {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 2.5rem;
+}
+
+.lb-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--border-strong);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: background 0.25s ease, transform 0.25s ease, width 0.25s ease;
+}
+
+.lb-dot.active {
+    background: var(--text);
+    width: 20px;
+    border-radius: 3px;
+}
+
 /* Mobile */
 @media (max-width: 768px) {
     .nav-links { display: none; }
@@ -764,6 +1331,37 @@ p {
 
     .footer-inner { flex-direction: column; }
     .footer-bottom { flex-direction: column; align-items: flex-start; }
+
+    /* Lookbook mobile overrides */
+    .lookbook { height: auto; min-height: 0; perspective: none; }
+
+    .lb-page {
+        position: relative;
+        inset: auto;
+        grid-template-columns: 1fr;
+        display: none;
+        opacity: 1;
+        transform: none;
+        transition: none;
+        pointer-events: none;
+    }
+
+    .lb-page.active {
+        display: grid;
+        pointer-events: auto;
+    }
+
+    .lb-page.lb-exit-left,
+    .lb-page.lb-exit-right,
+    .lb-page.lb-enter-right,
+    .lb-page.lb-enter-left { display: none; }
+
+    .lb-screen { height: 240px; }
+
+    .lb-info h3 { font-size: 1.375rem; }
+
+    .lb-arrow--prev { left: 0; }
+    .lb-arrow--next { right: 0; }
 }
 
 /* Reduced motion */
@@ -777,4 +1375,6 @@ p {
     .faq-answer { transition: none; }
     .btn-primary, .btn-ghost, .btn-outline { transition: none; }
     .faq-icon { transition: none; }
+    .lb-page { transition: none; }
+    .pai-cursor::after { animation: none; }
 }
